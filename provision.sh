@@ -7,6 +7,13 @@ MODELS=${MODELS:-$COMFY/models}
 CN=$COMFY/custom_nodes
 
 install_nodes() {
+  # Clone ComfyUI itself if missing (standalone run on a bare PyTorch pod, not the baked image).
+  if [ ! -f "$COMFY/main.py" ]; then
+    echo "[provision] cloning ComfyUI -> $COMFY"
+    git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /tmp/comfyui-base
+    mkdir -p "$COMFY"; cp -a /tmp/comfyui-base/. "$COMFY/"; rm -rf /tmp/comfyui-base
+    pip install --no-cache-dir -r "$COMFY/requirements.txt" || true
+  fi
   mkdir -p "$CN"; cd "$CN"
   clone() { [ -d "$(basename "$1" .git)" ] || git clone --depth 1 "$1"; }
   clone https://github.com/city96/ComfyUI-GGUF.git
