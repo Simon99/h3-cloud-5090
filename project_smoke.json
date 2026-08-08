@@ -1,0 +1,8 @@
+{
+ "prefix_field":"output_prefix",
+ "inject":{"video_path":["1","video"],"output_prefix":["3","filename_prefix"]},
+ "shots":[
+  {"id":"smoke01","fields":{"video_path":"/home/simon/claude-sandboxes/director/upscale-exp/seedvr2/water_seg.mp4"}},
+  {"id":"smoke02","fields":{"video_path":"/home/simon/claude-sandboxes/director/upscale-exp/seedvr2/light_seg.mp4"}}
+ ]
+}

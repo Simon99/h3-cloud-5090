@@ -1,0 +1,36 @@
+{
+  "_README": [
+    "This drives controller.py. Two parts:",
+    "1) 'inject' maps a field name -> [node_id, input_key] in YOUR exported template.json.",
+    "   Get node_ids: in ComfyUI, build/open your H3 workflow, Save (API Format) -> template.json,",
+    "   then find the node whose input you want to set (its key is the string id in the JSON).",
+    "2) 'shots' is the work list; each shot's 'fields' are injected into a fresh copy of the template.",
+    "The controller ALSO overrides the output-prefix field (see 'prefix_field') to fanout_<id> so",
+    "outputs are named per-shot and resume works. Delete a shot's file in ./outputs to re-run it.",
+    "This example is H3 text/image-to-video per shot (like bear/cake). For R2V multi-reference,",
+    "add ref-image fields here and map them to your ReferenceToVideo node's image inputs."
+  ],
+  "prefix_field": "output_prefix",
+  "inject": {
+    "positive_prompt": ["6", "text"],
+    "seed":            ["3", "noise_seed"],
+    "width":           ["12", "width"],
+    "height":          ["12", "height"],
+    "length":          ["12", "length"],
+    "output_prefix":   ["30", "filename_prefix"]
+  },
+  "defaults": {
+    "width": 1312, "height": 736, "length": 141
+  },
+  "shots": [
+    { "id": "shot01", "fields": {
+      "positive_prompt": "A Formosan black bear walks through a misty mountain forest, cinematic wildlife documentary, dawn light.",
+      "seed": 2001, "width": 1312, "height": 736, "length": 141 } },
+    { "id": "shot02", "fields": {
+      "positive_prompt": "Close-up of the black bear's face, dew on its fur, shallow depth of field.",
+      "seed": 2002, "width": 1312, "height": 736, "length": 141 } },
+    { "id": "shot03", "fields": {
+      "positive_prompt": "The bear wades across a clear stream, water splashing, mossy rocks and ferns behind.",
+      "seed": 2003, "width": 1312, "height": 736, "length": 141 } }
+  ]
+}
