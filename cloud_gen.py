@@ -5,7 +5,7 @@ MiniMaxH3ImageToVideo + sampler chain + dual VAE decode + CreateVideo + SaveVide
 No Spectrum node (not installed on the pod); guider/scheduler use the UNET model directly.
 Env: GW/GH/GF/GSTEPS override res/frames/steps.
 """
-import json, sys, time, urllib.request, os
+import json, sys, time, urllib.request, os, re
 
 SRV = "http://127.0.0.1:8188"
 UNET = "minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
@@ -141,8 +141,20 @@ if __name__ == "__main__":
                 print("SPECTRUM_NOT_FOUND (requested but node absent) -> running WITHOUT spectrum")
     except Exception as e:
         print("SCHEMA_ERR", e)
-    tag = ("_" + TAG) if TAG else ""
     seedbase = int(os.environ.get("GSEED", "2000"))
-    for i, (pfx, pr) in enumerate(SHOTS[:NSHOTS]):
-        run("cloudtest_" + pfx + tag, pr, seedbase + i)
+    shots_file = os.environ.get("GSHOTS_FILE", "")
+    if shots_file and os.path.exists(shots_file):
+        # FILM mode: load prompts from a `---`-separated file, run the assigned indices (GSHOTS="10,11,..").
+        txt = open(shots_file, encoding="utf-8").read()
+        prompts = [b.strip() for b in re.split(r'\n-{3,}\n', txt) if b.strip()]
+        gshots = os.environ.get("GSHOTS", "")
+        idxs = [int(x) for x in gshots.split(",") if x.strip() != ""] if gshots else list(range(len(prompts)))
+        print("FILM_MODE total_prompts=%d running_idxs=%s" % (len(prompts), idxs))
+        for i in idxs:
+            if 0 <= i < len(prompts):
+                run("shot%02d" % (i + 1), prompts[i], seedbase + i)
+    else:
+        tag = ("_" + TAG) if TAG else ""
+        for i, (pfx, pr) in enumerate(SHOTS[:NSHOTS]):
+            run("cloudtest_" + pfx + tag, pr, seedbase + i)
     print("ALL_SHOTS_DONE")

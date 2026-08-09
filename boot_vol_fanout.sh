@@ -20,8 +20,9 @@ echo "[$(t)] start ComfyUI $SAGE (out+temp local)"
 nohup python "$C/main.py" --listen 0.0.0.0 --port 8188 --output-directory "$OUT" --temp-directory "$TMP" $SAGE > /root/comfy.log 2>&1 &
 for i in $(seq 1 120); do curl -s -m3 http://127.0.0.1:8188/object_info >/dev/null 2>&1 && { echo "[$(t)] COMFY_UP ~$((i*3))s T=$(ts)"; break; }; sleep 3; done
 
-echo "[$(t)] GEN_START T=$(ts)"
-cp /workspace/h/cloud_gen.py /root/cloud_gen.py 2>/dev/null || true   # local copy, no shared-repo git ops
-cd /root && GSPECTRUM=0 GW=1312 GH=736 GF=141 GSTEPS=20 GN=1 python3 /root/cloud_gen.py
-echo "[$(t)] out: $(ls -la $OUT/*.mp4 2>/dev/null | tail -1)"
+echo "[$(t)] GEN_START T=$(ts) GSHOTS=${GSHOTS:-all}"
+[ -f /root/cloud_gen.py ] || cp /workspace/h/cloud_gen.py /root/cloud_gen.py 2>/dev/null || true   # fallback to volume copy
+cd /root && GSPECTRUM=0 GSHOTS_FILE=/root/bear_shots.txt GSHOTS="${GSHOTS:-}" \
+  GW=1312 GH=736 GF=141 GSTEPS=20 python3 /root/cloud_gen.py
+echo "[$(t)] outputs: $(ls $OUT/*.mp4 2>/dev/null | wc -l) mp4"
 echo "[$(t)] VOLBOOT_DONE T=$(ts)"
