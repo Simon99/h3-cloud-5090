@@ -142,6 +142,7 @@ if __name__ == "__main__":
     except Exception as e:
         print("SCHEMA_ERR", e)
     tag = ("_" + TAG) if TAG else ""
+    seedbase = int(os.environ.get("GSEED", "2000"))
     for i, (pfx, pr) in enumerate(SHOTS[:NSHOTS]):
-        run("cloudtest_" + pfx + tag, pr, 2000 + i)
+        run("cloudtest_" + pfx + tag, pr, seedbase + i)
     print("ALL_SHOTS_DONE")
