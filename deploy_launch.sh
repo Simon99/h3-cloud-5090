@@ -19,9 +19,9 @@ done
 SSH="ssh -i $HOME/.ssh/id_rsa -p $SPORT -o StrictHostKeyChecking=no -o ConnectTimeout=15 -o BatchMode=yes root@$IP"
 echo "waiting sshd @ $IP:$SPORT"
 for i in $(seq 1 30); do $SSH 'echo ok' >/dev/null 2>&1 && { echo "sshd up"; break; }; sleep 6; done
-$SSH 'cd /workspace/h && git pull -q; setsid bash /workspace/h/boot.sh >/workspace/boot.log 2>&1 </dev/null & echo LAUNCHED' 2>&1 | tail -1
+$SSH 'cd /workspace/h && git pull -q; setsid env INSTALL_SAGE=1 INSTALL_SPECTRUM=1 GSPECTRUM=1 GTAG=full GW=1312 GH=736 GF=141 GSTEPS=20 GN=1 bash /workspace/h/boot.sh >/workspace/boot.log 2>&1 </dev/null & echo LAUNCHED' 2>&1 | tail -1
 echo "$POD $IP $SPORT" > ~/.runpod-current
 # watchdog: plain nohup (survives), auto-terminate in 40 min as a leak safety-net
-nohup bash -c "sleep 2400; curl -s -X DELETE -H 'Authorization: Bearer $K' 'https://rest.runpod.io/v1/pods/$POD' >/dev/null 2>&1" >/dev/null 2>&1 &
-echo "WATCHDOG_ARMED pid=$! (auto-terminate $POD in 40min)"
+nohup bash -c "sleep 3600; curl -s -X DELETE -H 'Authorization: Bearer $K' 'https://rest.runpod.io/v1/pods/$POD' >/dev/null 2>&1" >/dev/null 2>&1 &
+echo "WATCHDOG_ARMED pid=$! (auto-terminate $POD in 60min)"
 echo "READY $POD $IP:$SPORT"
