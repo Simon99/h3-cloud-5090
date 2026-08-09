@@ -12,8 +12,9 @@ UNET = "minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
 CLIP = "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
 VVAE = "minimax_h3_video_vae_fp16.safetensors"
 AVAE = "minimax_h3_audio_vae_fp32.safetensors"
-W = int(os.environ.get("GW", "1312")); H = int(os.environ.get("GH", "736"))
-FR = int(os.environ.get("GF", "141")); STEPS = int(os.environ.get("GSTEPS", "20"))
+W = int(os.environ.get("GW", "640")); H = int(os.environ.get("GH", "384"))     # small for fast debug
+FR = int(os.environ.get("GF", "56")); STEPS = int(os.environ.get("GSTEPS", "20"))
+NSHOTS = int(os.environ.get("GN", "1"))   # how many shots (1 for debug)
 
 SHOTS = [
  ("bear11_water",
@@ -82,6 +83,15 @@ def run(prefix, prompt, seed):
             print("SHOT_TIMEOUT %s" % prefix); return
 
 if __name__ == "__main__":
-    for i, (pfx, pr) in enumerate(SHOTS):
+    # print the exact schemas of the nodes we use (helps diagnose validation errors)
+    try:
+        oi = json.load(urllib.request.urlopen(SRV + "/object_info", timeout=20))
+        for n in ("UNETLoader", "CLIPLoader", "MiniMaxH3ImageToVideo", "CreateVideo"):
+            info = oi.get(n, {}).get("input", {})
+            req = list(info.get("required", {}).keys()); opt = list(info.get("optional", {}).keys())
+            print("SCHEMA %s required=%s optional=%s" % (n, req, opt))
+    except Exception as e:
+        print("SCHEMA_ERR", e)
+    for i, (pfx, pr) in enumerate(SHOTS[:NSHOTS]):
         run("cloudtest_" + pfx, pr, 2000 + i)
     print("ALL_SHOTS_DONE")
