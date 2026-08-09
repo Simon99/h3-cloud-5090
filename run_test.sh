@@ -26,7 +26,7 @@ for i in $(seq 1 48); do
   J=$(api "https://rest.runpod.io/v1/pods/$POD")
   read RT IP SPORT < <(echo "$J" | python3 -c "import sys,json;d=json.load(sys.stdin);pm=d.get('portMappings') or {};print('yes' if d.get('runtime') else 'no', d.get('publicIp') or '-', pm.get('22') or '-')")
   echo "    [$i] runtime=$RT ip=$IP sshport=$SPORT"
-  [ "$RT" = "yes" ] && [ "$IP" != "-" ] && [ "$SPORT" != "-" ] && break
+  [ "$IP" != "-" ] && [ "$SPORT" != "-" ] && break   # SSH endpoint ready is enough (runtime flag often never flips)
   sleep 12
 done
 [ "$IP" = "-" ] && { echo "runtime/SSH not ready"; exit 1; }
@@ -46,8 +46,10 @@ for i in $(seq 1 90); do
   sleep 20
 done
 
-echo "[6] shot timings:"
-$SSH 'grep -aE "SHOT_DONE|SHOT_START|RUN_ERR|ALL_SHOTS_DONE" /workspace/boot.log' 2>/dev/null | tr -d '\r'
+echo "[6] FULL boot.log (captures gen errors before terminate):"
+echo "-------------------- boot.log --------------------"
+$SSH 'cat /workspace/boot.log' 2>/dev/null | tr -d '\r' | tail -80
+echo "--------------------------------------------------"
 
 echo "[7] pull the 2 output videos via ComfyUI HTTP proxy ..."
 mkdir -p ~/claude-sandboxes/director/cloud-5090/bear_cloud_out
