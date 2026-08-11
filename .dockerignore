@@ -1,8 +1,4 @@
 *
-!Dockerfile.baked
-!Dockerfile.v2
-!Dockerfile.v3
-!dl_models.py
+!Dockerfile.v5
 !cloud_gen.py
-!boot_baked.sh
-!boot_v3.sh
+!boot_v5.sh
