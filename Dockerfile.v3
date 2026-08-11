@@ -1,0 +1,12 @@
+# v3: ENV-ONLY image (no models baked — docker layers can't resume; HF at boot can).
+# ComfyUI + cu130 torch + sage + Turbo node + Director node. Models via boot_v3.sh (MODEL_SET env).
+FROM vastai/pytorch:2.12.0-cu130-cuda-13.2-mini-py312-2026-06-15
+RUN ln -sf $(command -v python3) /usr/local/bin/python && (apt-get update -qq && apt-get install -y -qq aria2 || true)
+RUN git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
+RUN pip install -q -r /workspace/ComfyUI/requirements.txt && \
+    pip install -q sageattention huggingface_hub scenedetect opencv-python-headless imageio-ffmpeg
+RUN git clone --depth 1 https://github.com/larryvrh/ComfyUI-MiniMax-H3-Turbo /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Turbo && \
+    git clone --depth 1 https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director /workspace/ComfyUI/custom_nodes/ComfyUI_MiniMaxH3_Director
+COPY cloud_gen.py boot_v3.sh /workspace/h/
+RUN chmod +x /workspace/h/boot_v3.sh
+ENV MODEL_SET=fl2va GW=1312 GH=736 GF=141 GSTEPS=20 GN=0
