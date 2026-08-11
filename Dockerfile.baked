@@ -1,0 +1,22 @@
+# H3 生成用的 baked image:ComfyUI + 4 個 H3 模型(~33GB)+ SageAttention 全烤進去。
+# 任何 provider(Vast/Salad/RunPod)用這個 image 開機 = 免下載、免 volume、免 HF 限流,秒進生成。
+# 建置:docker build -f Dockerfile.baked -t ghcr.io/simon99/h3-gen:latest .   然後 docker push
+FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
+
+# 1) base ComfyUI(內建原生 H3 節點)
+RUN git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
+
+# 2) python 依賴 + SageAttention
+RUN pip install --break-system-packages -q -r /workspace/ComfyUI/requirements.txt \
+ && pip install --break-system-packages -q sageattention huggingface_hub hf_transfer
+
+# 3) 烤進 4 個 H3 生成模型(~33GB) —— 這是關鍵,之後開機不用再下載
+COPY dl_models.py /tmp/dl_models.py
+RUN HF_HUB_ENABLE_HF_TRANSFER=1 python /tmp/dl_models.py
+
+# 4) 生成腳本
+COPY cloud_gen.py boot_baked.sh /workspace/h/
+RUN chmod +x /workspace/h/boot_baked.sh
+
+# 開機預設跑一鏡(可用 env GW/GH/GF/GSTEPS/GN/GSHOTS 覆寫);fan-out 時由 controller 覆寫 onstart
+ENV GW=1312 GH=736 GF=141 GSTEPS=20 GN=1

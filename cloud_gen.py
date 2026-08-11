@@ -8,7 +8,7 @@ Env: GW/GH/GF/GSTEPS override res/frames/steps.
 import json, sys, time, urllib.request, os, re
 
 SRV = "http://127.0.0.1:8188"
-UNET = "minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
+UNET = os.environ.get("GUNET", "minimax_h3_fl2va_pruned_fp8_scaled.safetensors")
 CLIP = "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
 VVAE = "minimax_h3_video_vae_fp16.safetensors"
 AVAE = "minimax_h3_audio_vae_fp32.safetensors"
@@ -16,8 +16,11 @@ W = int(os.environ.get("GW", "640")); H = int(os.environ.get("GH", "384"))     #
 FR = int(os.environ.get("GF", "56")); STEPS = int(os.environ.get("GSTEPS", "20"))
 NSHOTS = int(os.environ.get("GN", "1"))   # how many shots (1 for debug)
 USE_SPECTRUM = os.environ.get("GSPECTRUM", "0") == "1"   # wire Spectrum accel node if installed
+USE_TURBO = os.environ.get("GTURBO", "0") == "1"         # wire MiniMax-H3 Turbo LoRA + sampler
+TURBO_LORA = os.environ.get("GTURBO_LORA", "minimax_h3_turbo_v4_step600_ema.safetensors")
 TAG = os.environ.get("GTAG", "")          # suffix for the SaveVideo prefix (A/B labelling)
 SPEC = None                                # discovered Spectrum node spec (class + model-input key), set in main
+TURBO = None                               # discovered (lora_cls, lora_ins, sampler_cls, sampler_ins), set in main
 
 SHOTS = [
  ("bear11_water",
@@ -61,6 +64,27 @@ def discover_spectrum(oi):
         return (cls, model_key, ins)
     return None
 
+def discover_turbo(oi):
+    """Find MiniMax-H3 Turbo LoRA + Sampler nodes; return (lora_cls, lora_ins, samp_cls, samp_ins) or None."""
+    lora_cls = samp_cls = None
+    for cls in oi:
+        cl = cls.lower()
+        if "turbo" in cl and "lora" in cl and "minimax" in cl: lora_cls = cls
+        if "turbo" in cl and "sampler" in cl and "minimax" in cl: samp_cls = cls
+    if not (lora_cls and samp_cls): return None
+    def fill(cls, skip_types=("MODEL",)):
+        req = oi[cls].get("input", {}).get("required", {})
+        ins = {k: _default_for(s) for k, s in req.items() if s and s[0] not in skip_types}
+        return ins
+    lora_ins = fill(lora_cls)
+    for k in list(lora_ins):
+        lk = k.lower()
+        if "lora" in lk and isinstance(lora_ins[k], (str, type(None))): lora_ins[k] = TURBO_LORA
+        if "strength" in lk: lora_ins[k] = 1.0
+        if "low_vram" in lk or "lowvram" in lk: lora_ins[k] = False
+    samp_ins = fill(samp_cls)
+    return (lora_cls, lora_ins, samp_cls, samp_ins)
+
 def build(prompt, seed, prefix):
     g = {
       "L_model": {"class_type": "UNETLoader", "inputs": {"unet_name": UNET, "weight_dtype": "default"}},
@@ -90,6 +114,13 @@ def build(prompt, seed, prefix):
         g["SPEC"] = {"class_type": cls, "inputs": node_ins}
         g["guider"]["inputs"]["model"] = ["SPEC", 0]                  # Spectrum -> Guider + Scheduler
         g["sched"]["inputs"]["model"] = ["SPEC", 0]
+    if USE_TURBO and TURBO:
+        lora_cls, lora_ins, samp_cls, samp_ins = TURBO
+        li = dict(lora_ins); li["model"] = ["L_model", 0]             # UNETLoader -> TurboLoRA (patched model)
+        g["TLORA"] = {"class_type": lora_cls, "inputs": li}
+        g["guider"]["inputs"]["model"] = ["TLORA", 0]                 # patched model -> Guider + Scheduler
+        g["sched"]["inputs"]["model"] = ["TLORA", 0]
+        g["sampler"] = {"class_type": samp_cls, "inputs": dict(samp_ins)}  # TurboSampler replaces KSamplerSelect
     return g
 
 def run(prefix, prompt, seed):
@@ -139,6 +170,12 @@ if __name__ == "__main__":
                 print("SPECTRUM_WIRED class=%s model_key=%s inputs=%s" % (cls, mk, json.dumps(ins, ensure_ascii=False)))
             else:
                 print("SPECTRUM_NOT_FOUND (requested but node absent) -> running WITHOUT spectrum")
+        if USE_TURBO:
+            TURBO = discover_turbo(oi)
+            if TURBO:
+                print("TURBO_WIRED lora=%s ins=%s sampler=%s ins=%s" % (TURBO[0], json.dumps(TURBO[1], ensure_ascii=False), TURBO[2], json.dumps(TURBO[3], ensure_ascii=False)))
+            else:
+                print("TURBO_NOT_FOUND (requested but nodes absent) -> running WITHOUT turbo")
     except Exception as e:
         print("SCHEMA_ERR", e)
     seedbase = int(os.environ.get("GSEED", "2000"))

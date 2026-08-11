@@ -1,0 +1,13 @@
+# H3 gen baked image v2: cu130/torch2.12 + int8_convrot base model + sage + Turbo node.
+# LoRA NOT baked (fast-moving; boot downloads 780MB in seconds). Base = vastai image (Vast SSH-safe).
+FROM vastai/pytorch:2.12.0-cu130-cuda-13.2-mini-py312-2026-06-15
+RUN ln -sf $(command -v python3) /usr/local/bin/python
+RUN git clone --depth 1 https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
+RUN pip install -q -r /workspace/ComfyUI/requirements.txt && pip install -q sageattention huggingface_hub
+RUN git clone --depth 1 https://github.com/larryvrh/ComfyUI-MiniMax-H3-Turbo /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Turbo
+COPY dl_models.py /tmp/dl_models.py
+ENV DIT_FILE=diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+RUN python /tmp/dl_models.py
+COPY cloud_gen.py boot_baked.sh /workspace/h/
+RUN chmod +x /workspace/h/boot_baked.sh
+ENV GW=1312 GH=736 GF=141 GSTEPS=20 GN=1
