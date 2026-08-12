@@ -7,7 +7,7 @@
 import sys,json
 o=json.load(sys.stdin)
 def ok(x,maxbw):
-    return x.get('dph_total',9)<0.55 and (x.get('inet_down_cost') or 0)<=maxbw and x.get('disk_bw',0)>=5000
+    return x.get('dph_total',9)<0.55 and (x.get('inet_down_cost') or 0)<=maxbw and x.get('disk_bw',0)>=5000 and float(x.get('cuda_max_good') or 0)>=13.0
 free=[x for x in o if ok(x,0)]
 cheap=[x for x in o if ok(x,0.005)]
 pool=free or cheap
