@@ -5,7 +5,7 @@
 set -uo pipefail
 K=$(cat ~/.vast-api-key); HFT=$(cat ~/.hf-token)
 DIR=~/claude-sandboxes/director/cloud-5090
-NTARGET=5; NMIN=3; NSHOTS=23
+NTARGET=5; NMIN=3; MANIFEST="$DIR/bear_chains.json"
 VAST(){ ~/.local/bin/vastai "$@"; }
 
 echo "=== 選最多 $NTARGET 台(頻寬≤0.005 + disk_bw≥4000 + <\$0.6)==="
@@ -28,13 +28,17 @@ done
 # 批次佇列:由大到小(使用者策略:最先就緒的 pod 通常網/碟最快 → 給最長鏈)
 NP=${#PODS[@]}
 mapfile -t BATCHQ < <(python3 -c "
-n=$NP; tot=$NSHOTS
-base=tot//n; extra=tot%n; s=0; bs=[]
-for i in range(n):
-    c=base+(1 if i<extra else 0)
-    bs.append(list(range(s,s+c))); s+=c
-bs.sort(key=len, reverse=True)
-for b in bs: print(','.join(map(str,b)))")
+import json
+man=json.load(open('$MANIFEST'))
+es=man['entries']; n=$NP
+# greedy 裝箱:按幀數大→小放入目前最輕的箱
+order=sorted(range(len(es)), key=lambda i:-es[i]['frames'])
+bins=[[ ] for _ in range(n)]; load=[0]*n
+for i in order:
+    j=load.index(min(load)); bins[j].append(i); load[j]+=es[i]['frames']
+bs=[(sorted(b), sum(es[i]['frames'] for i in b)) for b in bins if b]
+bs.sort(key=lambda x:-x[1])   # 最重的箱排最前(給最先就緒 pod)
+for b,_ in bs: print(','.join(map(str,b)))")
 echo "實租 $NP 台,批次佇列(大→小): ${BATCHQ[*]}"
 nohup bash -c "sleep 4500; for p in ${PODS[*]}; do echo y | $HOME/.local/bin/vastai destroy instance \$p >/dev/null 2>&1; done" >/dev/null 2>&1 &
 echo "watchdog armed (75min)"
@@ -61,8 +65,8 @@ print(d.get('actual_status'), d.get('public_ipaddr','-'), dp)" 2>/dev/null)
         echo "  $P CUDA 快篩失敗,標記 dead"; LAUNCHED[$P]=DEAD; echo "$P - - - DEAD" >> ~/.film5-pods; continue
       fi
       GS=${BATCHQ[$QI]}; QI=$((QI+1))
-      scp -P "$DP" $SSHK "$DIR/bear_shots.txt" root@"$IP":/root/ >/dev/null 2>&1
-      ssh -n $SSHK -p "$DP" root@"$IP" "setsid env HF_TOKEN=$HFT MODEL_SET=fl2va GN=1 GSEED=2000 GUNET=minimax_h3_fl2va_pruned_int8_convrot.safetensors GW=1312 GH=736 GF=141 GSTEPS=20 GSHOTS_FILE=/root/bear_shots.txt GSHOTS='$GS' bash /workspace/h/boot_v5.sh >/root/boot.log 2>&1 </dev/null & echo OK" >/dev/null 2>&1
+      scp -P "$DP" $SSHK "$MANIFEST" root@"$IP":/root/ >/dev/null 2>&1
+      ssh -n $SSHK -p "$DP" root@"$IP" "setsid env HF_TOKEN=$HFT MODEL_SET=fl2va GN=1 GSEED=2000 GUNET=minimax_h3_fl2va_pruned_int8_convrot.safetensors GW=1312 GH=736 GF=141 GSTEPS=20 GSHOTS_FILE=/root/bear_chains.json GSHOTS='$GS' bash /workspace/h/boot_v5.sh >/root/boot.log 2>&1 </dev/null & echo OK" >/dev/null 2>&1
       LAUNCHED[$P]=1
       echo "  第$QI個就緒: $P ← 批次[$GS]"
       echo "$P $IP $DP $GS" >> ~/.film5-pods

@@ -180,7 +180,19 @@ if __name__ == "__main__":
         print("SCHEMA_ERR", e)
     seedbase = int(os.environ.get("GSEED", "2000"))
     shots_file = os.environ.get("GSHOTS_FILE", "")
-    if shots_file and os.path.exists(shots_file):
+    if shots_file and os.path.exists(shots_file) and shots_file.endswith(".json"):
+        # CHAIN mode: JSON manifest, per-entry frames (17k+5 grid). GSHOTS = entry indices.
+        man = json.load(open(shots_file, encoding="utf-8"))
+        entries = man["entries"]
+        gshots = os.environ.get("GSHOTS", "")
+        idxs = [int(x) for x in gshots.split(",") if x.strip() != ""] if gshots else list(range(len(entries)))
+        print("CHAIN_MODE total_entries=%d running_idxs=%s" % (len(entries), idxs))
+        for i in idxs:
+            if 0 <= i < len(entries):
+                e = entries[i]
+                FR = int(e["frames"])          # per-entry frame count overrides global
+                run("chain_%s" % e["id"], e["prompt"], seedbase + i)
+    elif shots_file and os.path.exists(shots_file):
         # FILM mode: load prompts from a `---`-separated file, run the assigned indices (GSHOTS="10,11,..").
         txt = open(shots_file, encoding="utf-8").read()
         prompts = [b.strip() for b in re.split(r'\n-{3,}\n', txt) if b.strip()]
