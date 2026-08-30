@@ -479,3 +479,5 @@
 {"ts": 1788084996.8, "utc_hour": 10, "event": "rented", "provider": "runpod", "pod": "gpbbnontg603xf", "machine": "o4eovil9r0n1", "dph": 0.69}
 {"ts": 1788104252.6, "utc_hour": 15, "event": "rented", "provider": "runpod", "pod": "1jmcssx2fao20l", "machine": "l0mj2fyxv5vq", "dph": 0.69}
 {"ts": 1788106833.3, "utc_hour": 16, "event": "rented", "provider": "runpod", "pod": "pkatt5ba6vbesy", "machine": "l0mj2fyxv5vq", "dph": 0.69}
+{"ts": 1788107464.1, "utc_hour": 16, "event": "destroyed", "provider": "runpod", "pod": "qbwmybsmdtjpja"}
+{"ts": 1788107468.9, "utc_hour": 16, "event": "rented", "provider": "runpod", "pod": "bb771qu8q51fq5", "machine": "dmlzccol1mvi", "dph": 0.69}

@@ -111,9 +111,24 @@ def create(argv):
     }
     try: os.remove("/tmp/runpod-pod.txt")
     except FileNotFoundError: pass
-    d = rest("POST", "/pods", body)
-    pid = d.get("id")
-    if not pid: raise SystemExit("建立失敗:" + json.dumps(d)[:300])
+    bl = set()
+    blf = os.path.join(DIR, "host_blacklist.txt")
+    if os.path.exists(blf):
+        for ln in open(blf):
+            ln = ln.strip()
+            if ln.startswith("runpod:"): bl.add(ln.split(":", 1)[1])
+    for attempt in range(4):
+        d = rest("POST", "/pods", body)
+        pid = d.get("id")
+        if not pid: raise SystemExit("建立失敗:" + json.dumps(d)[:300])
+        mid = d.get("machineId")
+        if mid in bl:
+            print(f"  ✗ 落到黑名單機器 {mid},銷毀重租({attempt+1}/4)")
+            kill([pid]); time.sleep(3)
+            continue
+        break
+    else:
+        raise SystemExit("連續 4 次落到黑名單機器,放棄")
     print(f"pod {pid}  machine {d.get('machineId')}  ${d.get('costPerHr')}/hr")
     log_event(event="rented", provider="runpod", pod=pid, machine=d.get("machineId"), dph=d.get("costPerHr"))
     open("/tmp/runpod-pod.txt", "w").write(pid + "\n")
