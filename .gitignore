@@ -1,0 +1,13 @@
+# 產出媒體(成片、對照圖、參考圖)——體積大,不進版控
+*.mp4
+*.mov
+*.png
+*.jpg
+*.wav
+*.mp3
+bear_film/
+bear_film_v5/
+bear_cloud_out/
+cook_film/
+__pycache__/
+*.pyc

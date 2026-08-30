@@ -1,0 +1,481 @@
+{"ts": 1786552680.8, "utc_hour": 16, "event": "rented", "pod": 47560889, "dph": 0.55, "note": "backfill", "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "running", "pod": 47560889, "min": 2.5, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "gate_kill", "pod": 47560889, "reason": "HF_DL_dead_twice", "min": 24, "cost": 0.22, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "rented", "pod": 47560891, "dph": 0.55, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "gate_kill", "pod": 47560891, "reason": "GateA_pull_15min", "cost": 0.14, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "rented", "pod": 47560892, "dph": 0.55, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "gate_kill", "pod": 47560892, "reason": "GateA_pull_15min", "cost": 0.14, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "rented", "pod": 47560894, "dph": 0.55, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "gate_kill", "pod": 47560894, "reason": "GateA_pull_15min", "cost": 0.14, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "rented", "pod": 47560895, "dph": 0.55, "run_tag": "cook0813"}
+{"ts": 1786552680.9, "utc_hour": 16, "event": "running", "pod": 47560895, "min": 4.0, "run_tag": "cook0813"}
+{"ts": 1786552681.0, "utc_hour": 16, "event": "cuda_ok", "pod": 47560895, "run_tag": "cook0813"}
+{"ts": 1786552681.0, "utc_hour": 16, "event": "rented", "pod": 47562031, "dph": 0.562, "disk_bw": 13516, "inet_down": 1135, "run_tag": "cook0813"}
+{"ts": 1786552681.0, "utc_hour": 16, "event": "rented", "pod": 47562058, "dph": 0.536, "disk_bw": 22827, "inet_down": 7819, "run_tag": "cook0813"}
+{"ts": 1786552681.0, "utc_hour": 16, "event": "running", "pod": 47562058, "min": 5.9, "run_tag": "cook0813"}
+{"ts": 1786552681.0, "utc_hour": 16, "event": "rented", "pod": 47562061, "dph": 0.562, "disk_bw": 13516, "inet_down": 1135, "run_tag": "cook0813"}
+{"ts": 1786553060.0, "utc_hour": 16, "event": "market", "n": 10, "p10": 0.336, "p50": 0.457, "lo": 0.336}
+{"ts": 1786553458.5, "utc_hour": 16, "event": "gate_kill", "pod": 47562031, "reason": "reboot_race_GateA", "min": 25, "cost": 0.24, "run_tag": "cook0813"}
+{"ts": 1786553458.5, "utc_hour": 16, "event": "gate_kill", "pod": 47562058, "reason": "reboot_race_GateA", "min": 24, "cost": 0.21, "run_tag": "cook0813"}
+{"ts": 1786553458.5, "utc_hour": 16, "event": "gate_kill", "pod": 47562061, "reason": "reboot_race_GateA", "min": 24, "cost": 0.22, "run_tag": "cook0813"}
+{"ts": 1786553458.5, "utc_hour": 16, "event": "rented", "pod": 47563424, "run_tag": "cook0813"}
+{"ts": 1786553458.5, "utc_hour": 16, "event": "rented", "pod": 47563440, "run_tag": "cook0813"}
+{"ts": 1786563413.3, "utc_hour": 19, "event": "market", "n": 7, "p10": 0.336, "p50": 0.336, "lo": 0.336}
+{"ts": 1786563413.3, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786563413.3, "utc_hour": 19, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786563413.3, "utc_hour": 19, "event": "market_geo", "geo": "TW", "n": 1, "p50": 0.561, "lo": 0.561}
+{"ts": 1786563413.3, "utc_hour": 19, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786563444.5, "utc_hour": 19, "event": "rented", "pod": 47572558, "dph": 0.33564814814814814, "disk_bw": 6512.0, "run_tag": "cook0813b"}
+{"ts": 1786563446.2, "utc_hour": 19, "event": "rented", "pod": 47572559, "dph": 0.33564814814814814, "disk_bw": 6425.0, "run_tag": "cook0813b"}
+{"ts": 1786563447.5, "utc_hour": 19, "event": "rented", "pod": 47572562, "dph": 0.33564814814814814, "disk_bw": 6408.8, "run_tag": "cook0813b"}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market", "n": 11, "p10": 0.336, "p50": 0.455, "lo": 0.336}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "BG", "n": 2, "p50": 0.448, "lo": 0.448}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "PR", "n": 1, "p50": 0.441, "lo": 0.441}
+{"ts": 1786569070.4, "utc_hour": 21, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.457, "lo": 0.457}
+{"ts": 1786570168.2, "utc_hour": 21, "event": "gate_kill", "pod": 47572558, "reason": "orch_blind_bug_deadline", "min": 95, "cost": 0.53, "run_tag": "cook0813b"}
+{"ts": 1786570168.2, "utc_hour": 21, "event": "gate_kill", "pod": 47572559, "reason": "orch_blind_bug_deadline", "min": 95, "cost": 0.53, "run_tag": "cook0813b"}
+{"ts": 1786570168.2, "utc_hour": 21, "event": "gate_kill", "pod": 47572562, "reason": "orch_blind_bug_deadline", "min": 95, "cost": 0.53, "run_tag": "cook0813b"}
+{"ts": 1786570178.5, "utc_hour": 21, "event": "rented", "pod": 47578690, "dph": 0.33564814814814814, "disk_bw": 6574.4, "run_tag": "cook0813b"}
+{"ts": 1786570179.8, "utc_hour": 21, "event": "rented", "pod": 47578692, "dph": 0.33564814814814814, "disk_bw": 6178.0, "run_tag": "cook0813b"}
+{"ts": 1786570181.1, "utc_hour": 21, "event": "rented", "pod": 47578693, "dph": 0.38805555555555554, "disk_bw": 4819.0, "run_tag": "cook0813b"}
+{"ts": 1786570416.3, "utc_hour": 21, "event": "running", "pod": 47578692, "min": 3.9, "run_tag": "cook0813b"}
+{"ts": 1786570418.5, "utc_hour": 21, "event": "dispatch", "pod": 47578692, "batch": "0,3,4", "run_tag": "cook0813b"}
+{"ts": 1786570463.8, "utc_hour": 21, "event": "running", "pod": 47578690, "min": 4.7, "run_tag": "cook0813b"}
+{"ts": 1786570466.1, "utc_hour": 21, "event": "dispatch", "pod": 47578690, "batch": "5,7,8", "run_tag": "cook0813b"}
+{"ts": 1786570555.8, "utc_hour": 21, "event": "running", "pod": 47578693, "min": 6.1, "run_tag": "cook0813b"}
+{"ts": 1786570565.9, "utc_hour": 21, "event": "dispatch", "pod": 47578693, "batch": "9,10", "run_tag": "cook0813b"}
+{"ts": 1786570729.1, "utc_hour": 21, "event": "dl_probe", "pod": 47578692, "rate": 4.0, "run_tag": "cook0813b"}
+{"ts": 1786570794.2, "utc_hour": 21, "event": "dl_probe", "pod": 47578690, "rate": 4.0, "run_tag": "cook0813b"}
+{"ts": 1786570894.3, "utc_hour": 21, "event": "dl_probe", "pod": 47578693, "rate": 4.0, "run_tag": "cook0813b"}
+{"ts": 1786571878.6, "utc_hour": 21, "event": "gate_kill", "pod": 47578690, "reason": "host_ssh_dead_180.189.55.43", "min": 30, "cost": 0.19, "run_tag": "cook0813b"}
+{"ts": 1786571878.6, "utc_hour": 21, "event": "gate_kill", "pod": 47578692, "reason": "host_ssh_dead_180.189.55.43", "min": 30, "cost": 0.19, "run_tag": "cook0813b"}
+{"ts": 1786571915.7, "utc_hour": 21, "event": "rented", "pod": 47580302, "dph": 0.4147222222222222, "disk_bw": 4653.0, "run_tag": "cook0813b"}
+{"ts": 1786571918.1, "utc_hour": 21, "event": "rented", "pod": 47580306, "dph": 0.4413888888888889, "disk_bw": 5568.380204215124, "run_tag": "cook0813b"}
+{"ts": 1786571920.6, "utc_hour": 21, "event": "rented", "pod": 47580309, "dph": 0.4480555555555556, "disk_bw": 4212.0, "run_tag": "cook0813b"}
+{"ts": 1786571937.1, "utc_hour": 21, "event": "chain_done", "pod": 47578693, "chain": "S1", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786572909.7, "utc_hour": 22, "event": "destroyed", "pod": 47580309, "hours": 0.1, "run_tag": "cook0813b"}
+{"ts": 1786572922.2, "utc_hour": 22, "event": "running", "pod": 47580306, "min": 16.6, "run_tag": "cook0813b"}
+{"ts": 1786572929.9, "utc_hour": 22, "event": "dispatch", "pod": 47580306, "batch": "0,3,4", "run_tag": "cook0813b"}
+{"ts": 1786572931.2, "utc_hour": 22, "event": "gate_kill", "pod": 47580302, "reason": "GateA_pull", "min": 16.9, "cost": 0.09, "run_tag": "cook0813b"}
+{"ts": 1786572944.3, "utc_hour": 22, "event": "chain_done", "pod": 47578693, "chain": "S2", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786572944.6, "utc_hour": 22, "event": "destroyed", "pod": 47578693, "hours": 0.18, "run_tag": "cook0813b"}
+{"ts": 1786573263.3, "utc_hour": 22, "event": "dl_probe", "pod": 47580306, "rate": 4.0, "run_tag": "cook0813b"}
+{"ts": 1786573739.2, "utc_hour": 22, "event": "gate_kill", "pod": 47578693, "reason": "destroy_silent_fail_idle", "min": 30, "cost": 0.19, "run_tag": "cook0813b"}
+{"ts": 1786573739.3, "utc_hour": 22, "event": "gate_kill", "pod": 47580302, "reason": "destroy_silent_fail_loading", "min": 29, "cost": 0.19, "run_tag": "cook0813b"}
+{"ts": 1786573825.9, "utc_hour": 22, "event": "rented", "pod": 47582054, "run_tag": "cook0813b"}
+{"ts": 1786574284.5, "utc_hour": 22, "event": "chain_done", "pod": 47580306, "chain": "N1", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786574678.4, "utc_hour": 22, "event": "gate_kill", "pod": 47582054, "reason": "GateB2_ssh", "cost": 0.09, "run_tag": "cook0813b"}
+{"ts": 1786574697.5, "utc_hour": 22, "event": "rented", "pod": 47582806, "run_tag": "cook0813b"}
+{"ts": 1786575021.6, "utc_hour": 22, "event": "chain_done", "pod": 47580306, "chain": "Y1", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786575258.2, "utc_hour": 22, "event": "gate_kill", "pod": 47582806, "reason": "GateA", "cost": 0.06, "run_tag": "cook0813b"}
+{"ts": 1786575276.4, "utc_hour": 22, "event": "rented", "pod": 47583319, "run_tag": "cook0813b"}
+{"ts": 1786575736.6, "utc_hour": 23, "event": "chain_done", "pod": 47580306, "chain": "Y2", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786575736.8, "utc_hour": 23, "event": "destroyed", "pod": 47580306, "hours": 0.95, "run_tag": "cook0813b"}
+{"ts": 1786575820.3, "utc_hour": 23, "event": "gate_kill", "pod": 47580306, "reason": "destroy_silent_fail_again", "min": 5, "cost": 0.03, "run_tag": "cook0813b"}
+{"ts": 1786576139.2, "utc_hour": 23, "event": "gate_kill", "pod": 47583319, "reason": "GateB2_ssh", "cost": 0.09, "run_tag": "cook0813b"}
+{"ts": 1786576151.6, "utc_hour": 23, "event": "rented", "pod": 47584163, "run_tag": "cook0813b"}
+{"ts": 1786576997.5, "utc_hour": 23, "event": "gate_kill", "pod": 47584163, "reason": "GateB2_ssh", "cost": 0.09, "run_tag": "cook0813b"}
+{"ts": 1786578161.5, "utc_hour": 23, "event": "rented", "pod": 47586055, "run_tag": "cook0813b"}
+{"ts": 1786578723.7, "utc_hour": 23, "event": "gate_kill", "pod": 47586055, "reason": "GateA", "cost": 0.06, "run_tag": "cook0813b"}
+{"ts": 1786578824.9, "utc_hour": 23, "event": "rented", "pod": 47586617, "run_tag": "cook0813b"}
+{"ts": 1786578993.2, "utc_hour": 23, "event": "dispatch", "pod": 47586617, "batch": "5,7,8", "run_tag": "cook0813b"}
+{"ts": 1786580031.6, "utc_hour": 0, "event": "chain_done", "pod": 47586617, "chain": "Y3", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market", "n": 8, "p10": 0.336, "p50": 0.448, "lo": 0.336}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786583471.8, "utc_hour": 1, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786583641.1, "utc_hour": 1, "event": "gate_kill", "pod": 47586617, "reason": "pod_restart_lost_work_takeover_blind", "min": 55, "cost": 0.45, "run_tag": "cook0813b"}
+{"ts": 1786583645.7, "utc_hour": 1, "event": "rented", "pod": 47590609, "run_tag": "cook0813b"}
+{"ts": 1786583645.7, "utc_hour": 1, "event": "rented", "pod": 47590611, "run_tag": "cook0813b"}
+{"ts": 1786583718.0, "utc_hour": 1, "event": "dispatch", "pod": 47590609, "batch": "4,7,8", "run_tag": "cook0813b"}
+{"ts": 1786587622.3, "utc_hour": 2, "event": "chain_done", "pod": 47590609, "chain": "Y2", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786588765.2, "utc_hour": 2, "event": "gate_kill", "pod": 47590609, "machine": 15010, "reason": "fake_busy_gpu_hang_B2_twice", "min": 85, "cost": 0.6, "run_tag": "cook0813b"}
+{"ts": 1786588769.8, "utc_hour": 2, "event": "rented", "pod": 47594952, "run_tag": "cook0813b"}
+{"ts": 1786588769.8, "utc_hour": 2, "event": "rented", "pod": 47594953, "run_tag": "cook0813b"}
+{"ts": 1786589008.9, "utc_hour": 2, "event": "dispatch", "pod": 47594953, "batch": "7,8", "run_tag": "cook0813b"}
+{"ts": 1786590160.1, "utc_hour": 3, "event": "chain_done", "pod": 47594953, "chain": "B2", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786590868.0, "utc_hour": 3, "event": "chain_done", "pod": 47594953, "chain": "B3", "secs": 750, "run_tag": "cook0813b"}
+{"ts": 1786591244.0, "utc_hour": 3, "event": "destroyed", "pod": 47594953, "machine": "good_71.17.237.246", "hours": 0.6, "run_tag": "cook0813b"}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market", "n": 9, "p10": 0.415, "p50": 0.456, "lo": 0.336}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.415, "lo": 0.415}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "SE", "n": 2, "p50": 0.456, "lo": 0.456}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.336, "lo": 0.336}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786597877.2, "utc_hour": 5, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786612275.1, "utc_hour": 9, "event": "market", "n": 7, "p10": 0.336, "p50": 0.535, "lo": 0.336}
+{"ts": 1786612275.1, "utc_hour": 9, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786612275.1, "utc_hour": 9, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1786612275.1, "utc_hour": 9, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786612275.1, "utc_hour": 9, "event": "market_geo", "geo": "MK", "n": 1, "p50": 0.655, "lo": 0.655}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market", "n": 7, "p10": 0.401, "p50": 0.535, "lo": 0.336}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market_geo", "geo": "BR", "n": 1, "p50": 0.601, "lo": 0.601}
+{"ts": 1786623648.6, "utc_hour": 12, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market", "n": 12, "p10": 0.336, "p50": 0.508, "lo": 0.336}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "SE", "n": 2, "p50": 0.456, "lo": 0.456}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "CZ", "n": 1, "p50": 0.508, "lo": 0.508}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "AR", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786627253.0, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market", "n": 8, "p10": 0.336, "p50": 0.469, "lo": 0.336}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market_geo", "geo": "RS", "n": 1, "p50": 0.442, "lo": 0.442}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786630854.8, "utc_hour": 14, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.547, "lo": 0.547}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market", "n": 10, "p10": 0.336, "p50": 0.454, "lo": 0.336}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "KR", "n": 5, "p50": 0.336, "lo": 0.336}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.454, "lo": 0.454}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "ES", "n": 1, "p50": 0.55, "lo": 0.55}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786634454.2, "utc_hour": 15, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market", "n": 14, "p10": 0.336, "p50": 0.442, "lo": 0.336}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "TW", "n": 2, "p50": 0.431, "lo": 0.431}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.454, "lo": 0.454}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "RS", "n": 1, "p50": 0.442, "lo": 0.442}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786638052.5, "utc_hour": 16, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market", "n": 12, "p10": 0.336, "p50": 0.495, "lo": 0.336}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "US", "n": 4, "p50": 0.495, "lo": 0.454}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "TH", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786641653.8, "utc_hour": 17, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market", "n": 9, "p10": 0.336, "p50": 0.535, "lo": 0.336}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "RS", "n": 1, "p50": 0.441, "lo": 0.441}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.457, "lo": 0.457}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786645254.1, "utc_hour": 18, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market", "n": 14, "p10": 0.336, "p50": 0.427, "lo": 0.336}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 5, "p50": 0.336, "lo": 0.336}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.427, "lo": 0.427}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "FI", "n": 1, "p50": 0.536, "lo": 0.536}
+{"ts": 1786648854.4, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market", "n": 13, "p10": 0.336, "p50": 0.495, "lo": 0.336}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.461, "lo": 0.461}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.456, "lo": 0.456}
+{"ts": 1786652453.2, "utc_hour": 20, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market", "n": 7, "p10": 0.336, "p50": 0.535, "lo": 0.336}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786656051.6, "utc_hour": 21, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market", "n": 12, "p10": 0.336, "p50": 0.481, "lo": 0.336}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "MK", "n": 1, "p50": 0.615, "lo": 0.615}
+{"ts": 1786659652.5, "utc_hour": 22, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market", "n": 10, "p10": 0.336, "p50": 0.448, "lo": 0.336}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market_geo", "geo": "NL", "n": 2, "p50": 0.562, "lo": 0.562}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786663253.5, "utc_hour": 23, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market", "n": 14, "p10": 0.336, "p50": 0.448, "lo": 0.336}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "KR", "n": 5, "p50": 0.336, "lo": 0.336}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "CA", "n": 3, "p50": 0.495, "lo": 0.456}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.495, "lo": 0.495}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786666855.1, "utc_hour": 0, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market", "n": 9, "p10": 0.336, "p50": 0.427, "lo": 0.336}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "SI", "n": 1, "p50": 0.441, "lo": 0.441}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786670455.2, "utc_hour": 1, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market", "n": 8, "p10": 0.336, "p50": 0.481, "lo": 0.336}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "HR", "n": 1, "p50": 0.461, "lo": 0.461}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786674052.5, "utc_hour": 2, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market", "n": 10, "p10": 0.336, "p50": 0.35, "lo": 0.336}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.35, "lo": 0.35}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "SI", "n": 1, "p50": 0.441, "lo": 0.441}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786677651.9, "utc_hour": 3, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market", "n": 12, "p10": 0.336, "p50": 0.44, "lo": 0.336}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "MX", "n": 1, "p50": 0.44, "lo": 0.44}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.461, "lo": 0.461}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786681251.1, "utc_hour": 4, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market", "n": 12, "p10": 0.336, "p50": 0.448, "lo": 0.336}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.401, "lo": 0.336}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "US", "n": 3, "p50": 0.441, "lo": 0.351}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.467, "lo": 0.467}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "FR", "n": 1, "p50": 0.468, "lo": 0.468}
+{"ts": 1786684850.6, "utc_hour": 5, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market", "n": 10, "p10": 0.336, "p50": 0.535, "lo": 0.336}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.402, "lo": 0.336}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.713, "lo": 0.713}
+{"ts": 1786688455.5, "utc_hour": 6, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market", "n": 11, "p10": 0.336, "p50": 0.455, "lo": 0.336}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.428, "lo": 0.428}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.467, "lo": 0.467}
+{"ts": 1786692051.9, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.495, "lo": 0.495}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market", "n": 12, "p10": 0.336, "p50": 0.535, "lo": 0.336}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786695654.7, "utc_hour": 8, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market", "n": 11, "p10": 0.336, "p50": 0.521, "lo": 0.336}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.495, "lo": 0.495}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "ES", "n": 1, "p50": 0.481, "lo": 0.481}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.521, "lo": 0.521}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786699252.9, "utc_hour": 9, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market", "n": 8, "p10": 0.336, "p50": 0.534, "lo": 0.336}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.461, "lo": 0.461}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market_geo", "geo": "CY", "n": 1, "p50": 0.534, "lo": 0.534}
+{"ts": 1786702859.1, "utc_hour": 10, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786706451.2, "utc_hour": 11, "event": "market", "n": 7, "p10": 0.336, "p50": 0.401, "lo": 0.336}
+{"ts": 1786706451.2, "utc_hour": 11, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786706451.3, "utc_hour": 11, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.468, "lo": 0.468}
+{"ts": 1786706451.3, "utc_hour": 11, "event": "market_geo", "geo": "CY", "n": 1, "p50": 0.534, "lo": 0.534}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market", "n": 6, "p10": 0.336, "p50": 0.401, "lo": 0.336}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.495, "lo": 0.495}
+{"ts": 1786710054.4, "utc_hour": 12, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market", "n": 11, "p10": 0.336, "p50": 0.455, "lo": 0.336}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "SE", "n": 3, "p50": 0.457, "lo": 0.455}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.436, "lo": 0.436}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786715602.1, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786737199.4, "utc_hour": 19, "event": "market", "n": 8, "p10": 0.336, "p50": 0.457, "lo": 0.336}
+{"ts": 1786737199.4, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786737199.4, "utc_hour": 19, "event": "market_geo", "geo": "SE", "n": 2, "p50": 0.456, "lo": 0.456}
+{"ts": 1786737199.4, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 2, "p50": 0.562, "lo": 0.562}
+{"ts": 1786737199.4, "utc_hour": 19, "event": "market_geo", "geo": "DK", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market", "n": 14, "p10": 0.336, "p50": 0.455, "lo": 0.336}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.457, "lo": 0.457}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "CY", "n": 1, "p50": 0.507, "lo": 0.507}
+{"ts": 1786758805.5, "utc_hour": 1, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market", "n": 13, "p10": 0.336, "p50": 0.457, "lo": 0.336}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "DK", "n": 2, "p50": 0.535, "lo": 0.535}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "IT", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786780395.7, "utc_hour": 7, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.457, "lo": 0.457}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market", "n": 10, "p10": 0.336, "p50": 0.481, "lo": 0.336}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 5, "p50": 0.336, "lo": 0.336}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "TH", "n": 1, "p50": 0.495, "lo": 0.495}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.601, "lo": 0.601}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "IS", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786801995.2, "utc_hour": 13, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.735, "lo": 0.735}
+{"ts": 1786805106.8, "utc_hour": 14, "event": "market", "provider": "gputw", "gpu": "RTX_5090", "base": 0.32, "eff": 0.376, "live": 0.53, "status": "高用量"}
+{"ts": 1786823598.2, "utc_hour": 19, "event": "market", "n": 6, "p10": 0.336, "p50": 0.401, "lo": 0.336}
+{"ts": 1786823598.2, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786823598.2, "utc_hour": 19, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786823598.2, "utc_hour": 19, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.454, "lo": 0.454}
+{"ts": 1786823598.2, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market", "n": 7, "p10": 0.336, "p50": 0.402, "lo": 0.336}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.402, "lo": 0.402}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market_geo", "geo": "TH", "n": 1, "p50": 0.495, "lo": 0.495}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market_geo", "geo": "FI", "n": 1, "p50": 0.536, "lo": 0.536}
+{"ts": 1786845195.8, "utc_hour": 1, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market", "n": 10, "p10": 0.336, "p50": 0.415, "lo": 0.336}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "SE", "n": 2, "p50": 0.455, "lo": 0.455}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786866797.1, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market", "n": 12, "p10": 0.336, "p50": 0.455, "lo": 0.336}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.455, "lo": 0.455}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "CY", "n": 1, "p50": 0.508, "lo": 0.508}
+{"ts": 1786888397.3, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market", "n": 5, "p10": 0.402, "p50": 0.668, "lo": 0.402}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.402, "lo": 0.402}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786909999.3, "utc_hour": 19, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market", "n": 11, "p10": 0.401, "p50": 0.448, "lo": 0.389}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "SE", "n": 3, "p50": 0.455, "lo": 0.401}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.389, "lo": 0.389}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "VN", "n": 1, "p50": 0.413, "lo": 0.413}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "AR", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1786931595.1, "utc_hour": 1, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market", "n": 5, "p10": 0.401, "p50": 0.468, "lo": 0.401}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market_geo", "geo": "ES", "n": 1, "p50": 0.43, "lo": 0.43}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.468, "lo": 0.468}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1786953200.8, "utc_hour": 7, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.713, "lo": 0.713}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market", "n": 7, "p10": 0.401, "p50": 0.455, "lo": 0.389}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.389, "lo": 0.389}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "AU", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "LV", "n": 1, "p50": 0.454, "lo": 0.454}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.532, "lo": 0.532}
+{"ts": 1786974818.5, "utc_hour": 13, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1786996422.4, "utc_hour": 19, "event": "market", "n": 5, "p10": 0.401, "p50": 0.481, "lo": 0.401}
+{"ts": 1786996422.4, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.401, "lo": 0.401}
+{"ts": 1786996422.4, "utc_hour": 19, "event": "market_geo", "geo": "GB", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1786996422.4, "utc_hour": 19, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.448, "lo": 0.448}
+{"ts": 1787017998.9, "utc_hour": 1, "event": "market", "n": 4, "p10": 0.454, "p50": 0.668, "lo": 0.454}
+{"ts": 1787017998.9, "utc_hour": 1, "event": "market_geo", "geo": "BR", "n": 1, "p50": 0.454, "lo": 0.454}
+{"ts": 1787017998.9, "utc_hour": 1, "event": "market_geo", "geo": "TW", "n": 1, "p50": 0.604, "lo": 0.604}
+{"ts": 1787017998.9, "utc_hour": 1, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1787017998.9, "utc_hour": 1, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.669, "lo": 0.669}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market", "n": 9, "p10": 0.336, "p50": 0.481, "lo": 0.336}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 5, "p50": 0.336, "lo": 0.336}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.507, "lo": 0.507}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.735, "lo": 0.735}
+{"ts": 1787039598.4, "utc_hour": 7, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.868, "lo": 1.868}
+{"ts": 1787061200.7, "utc_hour": 13, "event": "market", "n": 7, "p10": 0.336, "p50": 0.389, "lo": 0.336}
+{"ts": 1787061200.7, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 4, "p50": 0.336, "lo": 0.336}
+{"ts": 1787061200.7, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 2, "p50": 0.562, "lo": 0.562}
+{"ts": 1787061200.7, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.601, "lo": 0.601}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market", "n": 9, "p10": 0.336, "p50": 0.494, "lo": 0.336}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.494, "lo": 0.494}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787082876.3, "utc_hour": 19, "event": "market_geo", "geo": "TH", "n": 1, "p50": 0.601, "lo": 0.601}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market", "n": 10, "p10": 0.336, "p50": 0.415, "lo": 0.336}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 6, "p50": 0.336, "lo": 0.336}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market_geo", "geo": "HR", "n": 1, "p50": 0.428, "lo": 0.428}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1787104393.1, "utc_hour": 1, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market", "n": 12, "p10": 0.336, "p50": 0.456, "lo": 0.336}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 7, "p50": 0.336, "lo": 0.336}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.456, "lo": 0.456}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "FI", "n": 1, "p50": 0.509, "lo": 0.509}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.735, "lo": 0.735}
+{"ts": 1787126000.1, "utc_hour": 7, "event": "market_geo", "geo": "TW", "n": 1, "p50": 1.735, "lo": 1.735}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market", "n": 8, "p10": 0.336, "p50": 0.465, "lo": 0.336}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 3, "p50": 0.336, "lo": 0.336}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.465, "lo": 0.465}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market_geo", "geo": "FI", "n": 1, "p50": 0.536, "lo": 0.536}
+{"ts": 1787147604.2, "utc_hour": 13, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market", "n": 7, "p10": 0.427, "p50": 0.481, "lo": 0.336}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.336, "lo": 0.336}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market_geo", "geo": "TH", "n": 2, "p50": 0.441, "lo": 0.441}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market_geo", "geo": "NP", "n": 1, "p50": 0.427, "lo": 0.427}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.535, "lo": 0.535}
+{"ts": 1787169204.0, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market", "n": 7, "p10": 0.401, "p50": 0.453, "lo": 0.364}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market_geo", "geo": "US", "n": 3, "p50": 0.601, "lo": 0.364}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market_geo", "geo": "ES", "n": 1, "p50": 0.43, "lo": 0.43}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market_geo", "geo": "TH", "n": 1, "p50": 0.453, "lo": 0.453}
+{"ts": 1787190799.0, "utc_hour": 1, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market", "n": 6, "p10": 0.401, "p50": 0.468, "lo": 0.401}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 2, "p50": 0.401, "lo": 0.401}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.468, "lo": 0.468}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.56, "lo": 0.56}
+{"ts": 1787212408.9, "utc_hour": 7, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market", "n": 6, "p10": 0.415, "p50": 0.494, "lo": 0.415}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market_geo", "geo": "GB", "n": 2, "p50": 0.668, "lo": 0.668}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market_geo", "geo": "HR", "n": 1, "p50": 0.455, "lo": 0.455}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.494, "lo": 0.494}
+{"ts": 1787234002.5, "utc_hour": 13, "event": "market_geo", "geo": "MK", "n": 1, "p50": 0.695, "lo": 0.695}
+{"ts": 1787255600.5, "utc_hour": 19, "event": "market", "n": 5, "p10": 0.396, "p50": 0.505, "lo": 0.396}
+{"ts": 1787255600.5, "utc_hour": 19, "event": "market_geo", "geo": "US", "n": 2, "p50": 0.396, "lo": 0.396}
+{"ts": 1787255600.5, "utc_hour": 19, "event": "market_geo", "geo": "SE", "n": 1, "p50": 0.456, "lo": 0.456}
+{"ts": 1787255600.5, "utc_hour": 19, "event": "market_geo", "geo": "NL", "n": 1, "p50": 0.562, "lo": 0.562}
+{"ts": 1787255600.5, "utc_hour": 19, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.713, "lo": 0.713}
+{"ts": 1787277201.1, "utc_hour": 1, "event": "market", "n": 4, "p10": 0.401, "p50": 0.713, "lo": 0.401}
+{"ts": 1787277201.1, "utc_hour": 1, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.401, "lo": 0.401}
+{"ts": 1787277201.1, "utc_hour": 1, "event": "market_geo", "geo": "BG", "n": 1, "p50": 0.468, "lo": 0.468}
+{"ts": 1787277201.1, "utc_hour": 1, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.713, "lo": 0.713}
+{"ts": 1787277201.1, "utc_hour": 1, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.735, "lo": 0.735}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market", "n": 6, "p10": 0.441, "p50": 0.681, "lo": 0.441}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market_geo", "geo": "JP", "n": 2, "p50": 0.681, "lo": 0.681}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.441, "lo": 0.441}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market_geo", "geo": "IS", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market_geo", "geo": "GB", "n": 1, "p50": 0.713, "lo": 0.713}
+{"ts": 1787298799.2, "utc_hour": 7, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.735, "lo": 0.735}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market", "n": 5, "p10": 0.415, "p50": 0.481, "lo": 0.415}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market_geo", "geo": "CN", "n": 1, "p50": 0.415, "lo": 0.415}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market_geo", "geo": "BR", "n": 1, "p50": 0.468, "lo": 0.468}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market_geo", "geo": "KR", "n": 1, "p50": 0.481, "lo": 0.481}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market_geo", "geo": "US", "n": 1, "p50": 0.593, "lo": 0.593}
+{"ts": 1787320403.0, "utc_hour": 13, "event": "market_geo", "geo": "CA", "n": 1, "p50": 0.668, "lo": 0.668}
+{"ts": 1787357904.7, "utc_hour": 0, "event": "rented", "provider": "runpod", "pod": "v2h9gkdwasioho", "machine": "snnvrfyhg7nm", "dph": 0.69}
+{"ts": 1787358576.9, "utc_hour": 0, "event": "destroyed", "provider": "runpod", "pod": "v2h9gkdwasioho"}
+{"ts": 1787358655.7, "utc_hour": 0, "event": "rented", "provider": "runpod", "pod": "qtm93hf5fpmi8l", "machine": "t9edvgnwm5hw", "dph": 0.99}
+{"ts": 1787360275.3, "utc_hour": 0, "event": "destroyed", "provider": "runpod", "pod": "qtm93hf5fpmi8l"}
+{"ts": 1787360370.8, "utc_hour": 0, "event": "rented", "provider": "runpod", "pod": "cc1p8286k0jkfi", "machine": "ajk1dk2yi9nz", "dph": 0.69}
+{"ts": 1787360715.8, "utc_hour": 1, "event": "destroyed", "provider": "runpod", "pod": "cc1p8286k0jkfi"}
+{"ts": 1787360772.3, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "0n1lp85xkmacxp", "machine": "l5fn5hie1nx1", "dph": 0.99}
+{"ts": 1787361974.9, "utc_hour": 1, "event": "destroyed", "provider": "runpod", "pod": "0n1lp85xkmacxp"}
+{"ts": 1787361989.4, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "pfjyurfm1qzz2w", "machine": "24gxiv7zql7a", "dph": 0.99}
+{"ts": 1787366612.5, "utc_hour": 2, "event": "destroyed", "provider": "runpod", "pod": "pfjyurfm1qzz2w"}
+{"ts": 1787966212.4, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "nekj8tbjotr5r6", "machine": "rf1flwdr98uf", "dph": 0.69}
+{"ts": 1787966584.7, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "tv3vw0dcj1z0he", "machine": "rf1flwdr98uf", "dph": 0.69}
+{"ts": 1787970010.0, "utc_hour": 2, "event": "rented", "provider": "runpod", "pod": "8azvjk6tqp4gsi", "machine": "vokszdgjdacq", "dph": 0.69}
+{"ts": 1787984918.7, "utc_hour": 6, "event": "rented", "provider": "runpod", "pod": "v7jvgw5n9c7cr4", "machine": "snnvrfyhg7nm", "dph": 0.69}
+{"ts": 1788039013.6, "utc_hour": 21, "event": "destroyed", "provider": "runpod", "pod": "nekj8tbjotr5r6", "note": "reconciled_warden"}
+{"ts": 1788039013.6, "utc_hour": 21, "event": "destroyed", "provider": "runpod", "pod": "tv3vw0dcj1z0he", "note": "reconciled_warden"}
+{"ts": 1788039013.6, "utc_hour": 21, "event": "destroyed", "provider": "runpod", "pod": "8azvjk6tqp4gsi", "note": "reconciled_warden"}
+{"ts": 1788039013.6, "utc_hour": 21, "event": "destroyed", "provider": "runpod", "pod": "v7jvgw5n9c7cr4", "note": "reconciled_warden"}
+{"ts": 1788058607.8, "utc_hour": 2, "event": "rented", "provider": "runpod", "pod": "xxsqsp4evtzrm0", "machine": "ajk1dk2yi9nz", "dph": 0.69}
+{"ts": 1788077928.8, "utc_hour": 8, "event": "destroyed", "provider": "runpod", "pod": "qx2705siwx6x4x"}
+{"ts": 1788077963.9, "utc_hour": 8, "event": "rented", "provider": "runpod", "pod": "xb4ps02matp28e", "machine": "63w6nejyxe4a", "dph": 0.69}
+{"ts": 1788084996.8, "utc_hour": 10, "event": "rented", "provider": "runpod", "pod": "gpbbnontg603xf", "machine": "o4eovil9r0n1", "dph": 0.69}
+{"ts": 1788104252.6, "utc_hour": 15, "event": "rented", "provider": "runpod", "pod": "1jmcssx2fao20l", "machine": "l0mj2fyxv5vq", "dph": 0.69}
+{"ts": 1788106833.3, "utc_hour": 16, "event": "rented", "provider": "runpod", "pod": "pkatt5ba6vbesy", "machine": "l0mj2fyxv5vq", "dph": 0.69}

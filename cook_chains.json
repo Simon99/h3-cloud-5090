@@ -1,0 +1,260 @@
+{
+ "fps": 24.0,
+ "grid": "17k+5",
+ "total_frames": 3528,
+ "total_seconds": 147.0,
+ "entries": [
+  {
+   "id": "N1",
+   "frames": 294,
+   "shots": [
+    1,
+    2
+   ],
+   "subs": [
+    {
+     "shot": 1,
+     "dur": 6.125,
+     "cat": "market"
+    },
+    {
+     "shot": 2,
+     "dur": 6.125,
+     "cat": "market"
+    }
+   ],
+   "prompt": "Cinematic food documentary, photorealistic, warm natural light, shallow depth of field f/2.8, rich texture detail. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Wide establishing shot of a traditional Taiwanese morning wet market at dawn, warm tungsten bulbs over stalls, camera panning slowly across a butcher stall with hanging cuts of beef, gentle morning haze, documentary style. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Close-up, shallow depth of field: weathered hands of a butcher turning over fresh beef shank and marrow bones on a wooden counter, marbling glistening, blurred market background bokeh, slow push-in. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "N2",
+   "frames": 294,
+   "shots": [
+    3,
+    4
+   ],
+   "subs": [
+    {
+     "shot": 3,
+     "dur": 6.125,
+     "cat": "sizzle"
+    },
+    {
+     "shot": 4,
+     "dur": 6.125,
+     "cat": "boil"
+    }
+   ],
+   "prompt": "Cinematic food documentary, photorealistic, warm natural light, shallow depth of field f/2.8, rich texture detail. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Slow push-in toward a hot wok as scallions, ginger slices, star anise and chili bean paste hit shimmering oil, sizzling and tumbling, oil glossy and aromatic, macro texture of frying aromatics. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Action reveal: a heavy pot lid is lifted and a burst of steam erupts in slow motion, revealing dark red braised beef broth at a rolling boil with chunks of beef shank, camera holds close as steam curls in warm light. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "N3",
+   "frames": 294,
+   "shots": [
+    5,
+    6
+   ],
+   "subs": [
+    {
+     "shot": 5,
+     "dur": 6.125,
+     "cat": "boil"
+    },
+    {
+     "shot": 6,
+     "dur": 6.125,
+     "cat": "plating"
+    }
+   ],
+   "prompt": "Cinematic food documentary, photorealistic, warm natural light, shallow depth of field f/2.8, rich texture detail. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Slow motion: fresh white wheat noodles dropped into a large pot of rolling boiling water, strands fanning and swirling underwater, wisps of flour, bright kitchen backlight through the steam. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Orbiting shot circling a finished bowl of Taiwanese beef noodle soup 360 degrees, ladle pouring hot broth over noodles and beef, steam rising, scallions scattered on top, dark wooden table, luxurious depth of field. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "Y1",
+   "frames": 294,
+   "shots": [
+    7,
+    8
+   ],
+   "subs": [
+    {
+     "shot": 7,
+     "dur": 6.125,
+     "cat": "nightmkt"
+    },
+    {
+     "shot": 8,
+     "dur": 6.125,
+     "cat": "sizzle"
+    }
+   ],
+   "prompt": "Cinematic street food film, photorealistic, vivid neon night lighting, handheld documentary energy, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Wide shot gliding slowly forward through a bustling Taiwanese night market lane, neon signs and string lights, steam rising from food stalls, crowds browsing, saturated colors, cinematic depth. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Close-up on a hot oyster omelette griddle: egg batter poured in slow motion spreading and bubbling, oysters and greens folded in, spatula flip, glossy sauce drizzled over, steam and sizzle. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "Y2",
+   "frames": 294,
+   "shots": [
+    9,
+    10
+   ],
+   "subs": [
+    {
+     "shot": 9,
+     "dur": 6.125,
+     "cat": "fryer"
+    },
+    {
+     "shot": 10,
+     "dur": 6.125,
+     "cat": "charcoal"
+    }
+   ],
+   "prompt": "Cinematic street food film, photorealistic, vivid neon night lighting, handheld documentary energy, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Macro shot of popcorn chicken frying in bubbling golden oil, then the basket lifts dripping in slow motion and a hand sprinkles salt, pepper and basil leaves that flutter down, oil droplets sparkling. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Camera pans across a charcoal grill packed with Taiwanese sausages, flames licking up, glaze brushed on, char marks glistening, smoke drifting through neon backlight. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "Y3",
+   "frames": 294,
+   "shots": [
+    11,
+    12
+   ],
+   "subs": [
+    {
+     "shot": 11,
+     "dur": 6.125,
+     "cat": "drink"
+    },
+    {
+     "shot": 12,
+     "dur": 6.125,
+     "cat": "nightmkt"
+    }
+   ],
+   "prompt": "Cinematic street food film, photorealistic, vivid neon night lighting, handheld documentary energy, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Slow motion, shallow depth of field: dark tapioca pearls falling into a tall glass of iced milk tea, splash and swirl of cream, condensation on glass, night market lights as bokeh background. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Closing wide shot of the night market from a low angle, lantern light and neon bokeh, silhouettes of the crowd, steam clouds glowing above stalls, slow drift backward, dreamy end frame. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "B1",
+   "frames": 294,
+   "shots": [
+    13,
+    14
+   ],
+   "subs": [
+    {
+     "shot": 13,
+     "dur": 6.125,
+     "cat": "banquet"
+    },
+    {
+     "shot": 14,
+     "dur": 6.125,
+     "cat": "bigstove"
+    }
+   ],
+   "prompt": "Cinematic documentary of a traditional Taiwanese outdoor banquet (bandoh), photorealistic, warm festive light, human warmth, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Wide establishing shot at dusk of a temple plaza covered by a red canopy, dozens of round banquet tables with red tablecloths, guests gathering, strings of lights glowing, festive atmosphere. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] A chef at a roaring outdoor big stove tosses a giant wok, flames bursting upward in slow motion, sparks and steam, ingredients leaping in the air, dramatic backlight, action shot. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "B2",
+   "frames": 294,
+   "shots": [
+    15,
+    16
+   ],
+   "subs": [
+    {
+     "shot": 15,
+     "dur": 6.125,
+     "cat": "steamer"
+    },
+    {
+     "shot": 16,
+     "dur": 6.125,
+     "cat": "boil"
+    }
+   ],
+   "prompt": "Cinematic documentary of a traditional Taiwanese outdoor banquet (bandoh), photorealistic, warm festive light, human warmth, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Action reveal: a tall stack of bamboo steamers is opened, a huge cloud of steam erupts toward camera in slow motion revealing plump dumplings and buns, warm light rays through the steam. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Slow push-in into a ceramic jar of Buddha-jumps-over-the-wall soup, camera moving close over abalone, mushrooms, quail eggs and rich amber broth gently bubbling, steam curling, opulent detail. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "B3",
+   "frames": 294,
+   "shots": [
+    17,
+    18
+   ],
+   "subs": [
+    {
+     "shot": 17,
+     "dur": 6.125,
+     "cat": "plating"
+    },
+    {
+     "shot": 18,
+     "dur": 6.125,
+     "cat": "banquet"
+    }
+   ],
+   "prompt": "Cinematic documentary of a traditional Taiwanese outdoor banquet (bandoh), photorealistic, warm festive light, human warmth, shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Orbiting shot circling a platter of red crab sticky rice cake, a whole crab resting on glossy glutinous rice, garnish and steam, 360 degree rotation, banquet lights bokeh behind. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Medium shot, shallow depth of field: servers weaving between crowded tables carrying steaming dishes overhead, guests toasting in soft focus, warm bustling human moment, gentle slow motion. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "S1",
+   "frames": 294,
+   "shots": [
+    19,
+    20
+   ],
+   "subs": [
+    {
+     "shot": 19,
+     "dur": 6.125,
+     "cat": "studio"
+    },
+    {
+     "shot": 20,
+     "dur": 6.125,
+     "cat": "studio"
+    }
+   ],
+   "prompt": "High-end food commercial, ASMR sensory style, photorealistic macro cinematography, dark studio background, dramatic rim lighting, extreme shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Extreme macro slow motion: a thick ribbon of dark chocolate sauce pouring onto a dessert, folding and coiling glossily, black background, single dramatic rim light, silky texture. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Overhead slow motion: coarse salt crystals sprinkled from fingers over a resting steak, backlit grains scattering and bouncing, every crystal sharp against dark background. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "S2",
+   "frames": 294,
+   "shots": [
+    21,
+    22
+   ],
+   "subs": [
+    {
+     "shot": 21,
+     "dur": 6.125,
+     "cat": "sizzle"
+    },
+    {
+     "shot": 22,
+     "dur": 6.125,
+     "cat": "studio"
+    }
+   ],
+   "prompt": "High-end food commercial, ASMR sensory style, photorealistic macro cinematography, dark studio background, dramatic rim lighting, extreme shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Slow motion macro of a steak searing in a cast iron pan, oil droplets dancing, butter foaming, a flame flare licking over the crust, juices caramelizing, intense texture. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Macro push-in: golden honey spiraling down onto a stack of fluffy pancakes, ribbons pooling and dripping over the edges, soft morning side light, extreme detail of glossy threads. No people speaking, no on-screen text, no subtitles, no captions."
+  },
+  {
+   "id": "S3",
+   "frames": 294,
+   "shots": [
+    23,
+    24
+   ],
+   "subs": [
+    {
+     "shot": 23,
+     "dur": 6.125,
+     "cat": "studio"
+    },
+    {
+     "shot": 24,
+     "dur": 6.125,
+     "cat": "drink"
+    }
+   ],
+   "prompt": "High-end food commercial, ASMR sensory style, photorealistic macro cinematography, dark studio background, dramatic rim lighting, extreme shallow depth of field. A continuous sequence in one take, two connected shots.\n\nStoryboard:\n[0s-6.12s] Push-in close-up: a sharp knife slices through a juicy roast, the cut opening as clear juices well up and run out in slow motion, fibers glistening, steam rising from the pink center. No people speaking, no on-screen text, no subtitles, no captions.\n[6.12s-12.25s] Orbiting macro: sparkling amber soda poured over clear ice cubes in a tall glass, bubbles streaming upward, condensation beads, dark background with a single warm key light, 360 rotation. No people speaking, no on-screen text, no subtitles, no captions."
+  }
+ ]
+}

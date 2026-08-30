@@ -5,7 +5,7 @@
 set -uo pipefail
 K=$(cat ~/.vast-api-key); HFT=$(cat ~/.hf-token)
 DIR=~/claude-sandboxes/director/cloud-5090
-NTARGET=5; NMIN=3; MANIFEST="$DIR/bear_chains.json"
+NTARGET=${NTARGET:-5}; NMIN=${NMIN:-3}; MANIFEST="${MANIFEST:-$DIR/bear_chains.json}"
 VAST(){ ~/.local/bin/vastai "$@"; }
 
 echo "=== 選最多 $NTARGET 台(頻寬≤0.005 + disk_bw≥4000 + <\$0.6)==="
@@ -65,8 +65,9 @@ print(d.get('actual_status'), d.get('public_ipaddr','-'), dp)" 2>/dev/null)
         echo "  $P CUDA 快篩失敗,標記 dead"; LAUNCHED[$P]=DEAD; echo "$P - - - DEAD" >> ~/.film5-pods; continue
       fi
       GS=${BATCHQ[$QI]}; QI=$((QI+1))
-      scp -P "$DP" $SSHK "$MANIFEST" root@"$IP":/root/ >/dev/null 2>&1
-      ssh -n $SSHK -p "$DP" root@"$IP" "setsid env HF_TOKEN=$HFT MODEL_SET=fl2va GN=1 GSEED=2000 GUNET=minimax_h3_fl2va_pruned_int8_convrot.safetensors GW=1312 GH=736 GF=141 GSTEPS=20 GSHOTS_FILE=/root/bear_chains.json GSHOTS='$GS' bash /workspace/h/boot_v5.sh >/root/boot.log 2>&1 </dev/null & echo OK" >/dev/null 2>&1
+      scp -P "$DP" $SSHK "$MANIFEST" "$DIR/cloud_gen.py" root@"$IP":/root/ >/dev/null 2>&1
+      ssh -n $SSHK -p "$DP" root@"$IP" "cp /root/cloud_gen.py /workspace/h/cloud_gen.py" >/dev/null 2>&1
+      ssh -n $SSHK -p "$DP" root@"$IP" "setsid env HF_TOKEN=$HFT MODEL_SET=fl2va GN=1 GSEED=2000 GUNET=minimax_h3_fl2va_pruned_int8_convrot.safetensors GW=1312 GH=736 GF=141 GSTEPS=20 GSHOTS_FILE=/root/$(basename $MANIFEST) GSHOTS='$GS' bash /workspace/h/boot_v5.sh >/root/boot.log 2>&1 </dev/null & echo OK" >/dev/null 2>&1
       LAUNCHED[$P]=1
       echo "  第$QI個就緒: $P ← 批次[$GS]"
       echo "$P $IP $DP $GS" >> ~/.film5-pods
