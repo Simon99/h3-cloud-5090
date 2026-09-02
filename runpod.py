@@ -60,13 +60,16 @@ def rest(method, path, body=None, timeout=120):
 
 
 # 開機期進度必須可觀測:8189 靜態服務 /root + 每 20 秒寫 progress.txt(時間戳 已下載bytes log大小)
-BOOTCMD = (
+BOOT_OBS = (
     "python3 -m http.server 8189 --directory /root >/dev/null 2>&1 & "
     "(while true; do echo $(date +%s) "
     "$(du -sb /workspace/ComfyUI/models 2>/dev/null | cut -f1) "
     "$(stat -c %s /root/comfy.log 2>/dev/null || echo 0) > /root/progress.txt; sleep 20; done) & "
-    "bash /workspace/h/boot_v5.sh > /root/boot.log 2>&1; tail -f /dev/null"
 )
+BOOT_MAIN = "bash /workspace/h/boot_v5.sh > /root/boot.log 2>&1; tail -f /dev/null"
+# 教訓(2026-09-02):precmd 曾接在觀測服務之前 → 慢網機器 30 分全盲。
+# 順序鐵則:觀測最先起,任何前置工作都在它之後。
+BOOTCMD = BOOT_OBS + BOOT_MAIN
 
 # 額外權重(如 turbo LoRA):開機時一併抓,因為映像無 sshd、事後無法送檔進去
 EXTRA = {
@@ -96,10 +99,10 @@ def create(argv):
                     f"(curl -L --retry 5 -C - -s '{url}' "
                     f"-o /workspace/ComfyUI/models/{sub}/{fn} && echo EXTRA_OK_{k} >> /root/boot.log) & ")
     if o.get("precmd"):
-        # 前置序列指令(pip install 等,需在 ComfyUI 啟動前完成——不用 & 背景)
-        pre += o["precmd"].rstrip(";") + " ; "
+        # 前置序列指令:在觀測服務之後、主開機腳本之前執行,全程寫 /root/pre.log 可觀測
+        pre += "( " + o["precmd"].rstrip(";") + " ) > /root/pre.log 2>&1 ; "
     if pre:
-        bootcmd = pre + BOOTCMD
+        bootcmd = BOOT_OBS + pre + BOOT_MAIN
     body = {
         "name": o["name"], "imageName": o.get("image", "kyrox/h3-gen:v5"),
         "gpuTypeIds": [gpu], "gpuCount": 1, "cloudType": o.get("cloud", "SECURE"),

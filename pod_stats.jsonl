@@ -482,3 +482,15 @@
 {"ts": 1788107464.1, "utc_hour": 16, "event": "destroyed", "provider": "runpod", "pod": "qbwmybsmdtjpja"}
 {"ts": 1788107468.9, "utc_hour": 16, "event": "rented", "provider": "runpod", "pod": "bb771qu8q51fq5", "machine": "dmlzccol1mvi", "dph": 0.69}
 {"ts": 1788119053.8, "utc_hour": 19, "event": "rented", "provider": "runpod", "pod": "funnapm1f7e28j", "machine": "xetiynnhuqmz", "dph": 0.69}
+{"ts": 1788225004.9, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "j5dn7vl87nkafb", "machine": "k8o9vla5hy6l", "dph": 0.69}
+{"ts": 1788248212.2, "utc_hour": 7, "event": "rented", "provider": "runpod", "pod": "4ic5svws3co8mr", "machine": "63w6nejyxe4a", "dph": 0.69}
+{"ts": 1788310968.3, "utc_hour": 1, "event": "rented", "provider": "runpod", "pod": "tvxp7qjlgk1947", "machine": "vokszdgjdacq", "dph": 0.69}
+{"ts": 1788321465.9, "utc_hour": 3, "event": "rented", "provider": "runpod", "pod": "9hwut9e3h4fzq0", "machine": "snnvrfyhg7nm", "dph": 0.69}
+{"ts": 1788328752.6, "utc_hour": 5, "event": "rented", "provider": "runpod", "pod": "2t0famxmeaixek", "machine": "k9tp0mygqsb9", "dph": 0.69}
+{"ts": 1788329077.1, "utc_hour": 6, "event": "rented", "provider": "runpod", "pod": "pf772a7zt1kgke", "machine": "k9tp0mygqsb9", "dph": 0.69}
+{"ts": 1788329464.5, "utc_hour": 6, "event": "destroyed", "provider": "runpod", "pod": "3os4sae1kma6ob"}
+{"ts": 1788329475.5, "utc_hour": 6, "event": "destroyed", "provider": "runpod", "pod": "61kbgipdgoi5pm"}
+{"ts": 1788329486.6, "utc_hour": 6, "event": "destroyed", "provider": "runpod", "pod": "olngh366ac4uth"}
+{"ts": 1788329497.6, "utc_hour": 6, "event": "destroyed", "provider": "runpod", "pod": "7b65oojlrbonug"}
+{"ts": 1788329528.3, "utc_hour": 6, "event": "rented", "provider": "runpod", "pod": "52u5b0oa0752a3", "machine": "e7rl9wp4hqiw", "dph": 0.34}
+{"ts": 1788329669.5, "utc_hour": 6, "event": "rented", "provider": "runpod", "pod": "67htqw4evb0apl", "machine": "q3m5gucz3fc1", "dph": 0.99}

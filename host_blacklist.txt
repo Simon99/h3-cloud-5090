@@ -13,3 +13,5 @@
 # RunPod machine(2026-08-31):兩顆 pod 連續死在 VAE 解碼(736P 與 544P 各一),
 # 採樣皆正常、log 無 OOM → 宿主層硬殺,疑 RAM 不足。544P 解碼在其他機器從未失敗。
 runpod:l0mj2fyxv5vq
+# RunPod machine(2026-09-02):兩顆 pod 連續下載速率≈0(4分鐘 23KB),出口壞
+runpod:k9tp0mygqsb9
