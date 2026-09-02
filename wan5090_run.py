@@ -130,7 +130,8 @@ def main():
         g = build_t2v(o)
     r = T.post_json(T.base(pid) + "/prompt", {"prompt": g, "client_id": "wn-" + uuid.uuid4().hex[:8]})
     job = r.get("prompt_id")
-    if not job:
+    if not job or r.get("node_errors"):
+        # node_errors 非空=部分輸出被驗證忽略(如 min 值違規),會變成「假成功」——一律判提交失敗
         print("SUBMIT_ERR", json.dumps(r, ensure_ascii=False)[:1200]); sys.exit(1)
     print(f"SUBMITTED mode={o['mode']} job={job}", flush=True)
     t0 = time.time(); miss = 0
