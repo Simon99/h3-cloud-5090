@@ -98,14 +98,17 @@ def create(argv):
     if pre:
         bootcmd = pre + BOOTCMD
     body = {
-        "name": o["name"], "imageName": "kyrox/h3-gen:v5",
+        "name": o["name"], "imageName": o.get("image", "kyrox/h3-gen:v5"),
         "gpuTypeIds": [gpu], "gpuCount": 1, "cloudType": o.get("cloud", "SECURE"),
         "containerDiskInGb": int(o["disk"]), "volumeInGb": 0,
         "ports": ["8188/http", "8189/http", "22/tcp"],
-        "env": {"HF_TOKEN": hft, "MODEL_SET": o["set"], "GN": o["gn"]},
+        "env": {"HF_TOKEN": hft, "MODEL_SET": o["set"], "GN": o["gn"],
+                **({"PUBLIC_KEY": open(os.path.expanduser("~/.ssh/id_rsa.pub")).read().strip()}
+                   if o.get("plain") == "1" else {})},
         # vastai 基底映像自帶 entrypoint 會吞掉 CMD → 必須覆寫 entrypoint 才跑得到我們的啟動腳本
-        "dockerEntrypoint": ["/bin/bash", "-c", bootcmd],
-        "dockerStartCmd": [],
+        # --plain=1:用官方映像的預設啟動(sshd 等),不覆寫 entrypoint,env 帶 PUBLIC_KEY
+        **({} if o.get("plain") == "1" else
+           {"dockerEntrypoint": ["/bin/bash", "-c", bootcmd], "dockerStartCmd": []}),
         "minDownloadMbps": 500,          # 租前 gate:頻寬太差的不要
         "minDiskBandwidthMBps": 400,
     }
