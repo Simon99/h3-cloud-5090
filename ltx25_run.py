@@ -72,21 +72,22 @@ def build(mode, prompt, first, last, seed, out, W=960, H=544, FR=121, fps=24):
     g["cat"] = {"class_type": "LTXVConcatAVLatent", "inputs": {"video_latent": vref, "audio_latent": ["alat", 0]}}
     s1 = stage(g, "s1", ["unet", 0], ["cat", 0], pos, neg, SIG1, seed)
     g["sep1"] = {"class_type": "LTXVSeparateAVLatent", "inputs": {"av_latent": s1}}
+    v1 = ["sep1", 0]
+    if mode == "flf2v":
+        # guide 幀必須在 latent 放大「之前」裁掉,否則位置座標對不上放大後的 token 網格
+        g["crop"] = {"class_type": "LTXVCropGuides",
+                     "inputs": {"positive": pos, "negative": neg, "latent": v1}}
+        pos, neg, v1 = ["crop", 0], ["crop", 1], ["crop", 2]
     # 第二段:latent 2x + 3 步精修
     g["up2"] = {"class_type": "LTXVLatentUpsampler",
-                "inputs": {"samples": ["sep1", 0], "upscale_model": ["ups", 0], "vae": ["vvae", 0]}}
+                "inputs": {"samples": v1, "upscale_model": ["ups", 0], "vae": ["vvae", 0]}}
     g["inp2"] = {"class_type": "LTXVImgToVideoInplace",
                  "inputs": {"vae": ["vvae", 0], "image": ["dummy", 0], "latent": ["up2", 0],
                             "strength": 1.0, "bypass": True}}
     g["cat2"] = {"class_type": "LTXVConcatAVLatent", "inputs": {"video_latent": ["inp2", 0], "audio_latent": ["sep1", 1]}}
     s2 = stage(g, "s2", ["unet", 0], ["cat2", 0], pos, neg, SIG2, seed + 1)
     g["sep2"] = {"class_type": "LTXVSeparateAVLatent", "inputs": {"av_latent": s2}}
-    if mode == "flf2v":
-        g["crop"] = {"class_type": "LTXVCropGuides",
-                     "inputs": {"positive": pos, "negative": neg, "latent": ["sep2", 0]}}
-        vout = ["crop", 2]
-    else:
-        vout = ["sep2", 0]
+    vout = ["sep2", 0]
     g["vdec"] = {"class_type": "VAEDecodeTiled",
                  "inputs": {"samples": vout, "vae": ["vvae", 0], "tile_size": 512,
                             "overlap": 64, "temporal_size": 64, "temporal_overlap": 8}}
