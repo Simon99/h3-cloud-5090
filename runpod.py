@@ -95,6 +95,9 @@ def create(argv):
             pre += (f"mkdir -p /workspace/ComfyUI/models/{sub} && "
                     f"(curl -L --retry 5 -C - -s '{url}' "
                     f"-o /workspace/ComfyUI/models/{sub}/{fn} && echo EXTRA_OK_{k} >> /root/boot.log) & ")
+    if o.get("precmd"):
+        # 前置序列指令(pip install 等,需在 ComfyUI 啟動前完成——不用 & 背景)
+        pre += o["precmd"].rstrip(";") + " ; "
     if pre:
         bootcmd = pre + BOOTCMD
     body = {
