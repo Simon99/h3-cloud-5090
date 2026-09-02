@@ -15,3 +15,5 @@
 runpod:l0mj2fyxv5vq
 # RunPod machine(2026-09-02):兩顆 pod 連續下載速率≈0(4分鐘 23KB),出口壞
 runpod:k9tp0mygqsb9
+# RunPod machine(2026-09-02):pip 下載先慢後停(1.1GB 卡死 8 分),網路斷流
+runpod:oi01ctzqp4qu
