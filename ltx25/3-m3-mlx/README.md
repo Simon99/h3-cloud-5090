@@ -1,25 +1,29 @@
-# 包3|ltx-2-mlx:Apple Silicon 跑 LTX-2(官方 ComfyUI 生態外)
+# Pkg 3 | ltx-2-mlx: LTX-2 on Apple Silicon (outside the ComfyUI ecosystem)
 
-專案:[dgrauet/ltx-2-mlx](https://github.com/dgrauet/ltx-2-mlx)(MLX 原生移植)。
-實測機:M3 Ultra;q8 權重 ~82GB 磁碟。
+[中文版 →](README.zh.md)
 
-## 安裝與生死線
+Project: [dgrauet/ltx-2-mlx](https://github.com/dgrauet/ltx-2-mlx) (native MLX port).
+Tested on: M3 Ultra; q8 weights take ~82GB of disk.
+
+## Install & the lifeline
 ```bash
 git clone https://github.com/dgrauet/ltx-2-mlx && cd ltx-2-mlx
 pip install -r requirements.txt
-# ffmpeg 鏈(缺一即 mux 壞檔/找不到 ffprobe):
-pip install "imageio-ffmpeg>=0.7.1" static-ffmpeg   # imageio 帶 ffmpeg 7.1;static-ffmpeg 只用它的 ffprobe
+# ffmpeg chain (missing either one = corrupt mux / no ffprobe):
+pip install "imageio-ffmpeg>=0.7.1" static-ffmpeg   # imageio ships ffmpeg 7.1; use static-ffmpeg ONLY for its ffprobe
 ```
-- **`--low-ram` 必加**:不加的話 VAE 解碼會把整機記憶體壓死(實測 M3 失聯數小時,只能硬重開)
-- static-ffmpeg 的 ffmpeg 7.0 會 mux 出壞檔——影片編碼走 imageio 的 7.1,ffprobe 才用 static
+- **`--low-ram` is mandatory**: without it the VAE decode eats the whole machine's memory
+  (measured: an M3 unreachable for hours, hard reboot only)
+- static-ffmpeg's ffmpeg 7.0 muxes corrupt files — encode via imageio's 7.1, use static only for ffprobe
 
-## 已驗證跑法
+## Verified invocations
 ```bash
-# 蒸餾版文生(480p 實測 ~19s/步)
+# distilled text-to-video (~19s/step at 480p measured)
 python generate.py --model distilled --prompt "..." --low-ram
-# ic-lora(Clean-Plate 背景清除,已驗證可跑)
+# ic-lora (Clean-Plate background removal, verified working)
 python generate.py --model distilled --ic-lora clean-plate --input in.mp4 --low-ram
 ```
 
-## 定位
-不追速度(5090 快一個量級),價值在:本地無雲費、隱私、以及 Mac 大統一記憶體能載 q8 全精度層。
+## Positioning
+Not about speed (a 5090 is an order of magnitude faster). The value: no cloud cost, privacy,
+and Mac unified memory large enough for q8 full-precision layers.

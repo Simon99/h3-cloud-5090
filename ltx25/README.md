@@ -1,42 +1,44 @@
-# LTX-2.5 — 拖進 ComfyUI 就能跑
+# LTX-2.5 — drag-and-run ComfyUI workflows
 
-`workflows/` 三個官方 workflow 檔,拖進 ComfyUI 視窗即載入(採樣參數/sigmas/接線都在檔內,不用手接):
+[中文版 →](README.zh.md)
 
-| 檔 | 用途 | 5090 實測 |
+Three official workflow files in `workflows/` — drag into the ComfyUI window to load (sampling params, sigmas and wiring are all inside the file, no manual setup):
+
+| File | Purpose | Measured on RTX 5090 |
 |---|---|---|
-| `video_ltx2_5_t2v.json` | 文生影片(含音訊) | 121幀 83s,1920×1088 |
-| `video_ltx2_5_flf2v.json` | 首尾幀鎖定 | 121幀 ~100s |
-| `video_ltx2_5_i2v.json` | 圖生影片 | (同級) |
+| `video_ltx2_5_t2v.json` | Text-to-video (with audio) | 121 frames in 83s, 1920×1088 |
+| `video_ltx2_5_flf2v.json` | First/last keyframe lock | 121 frames in ~100s |
+| `video_ltx2_5_i2v.json` | Image-to-video | (same class) |
 
-## 配置標註
+## Configuration notes
 
-1. **ComfyUI 必須 ≥ 0.34**(舊版有節點但 gemma4 文字編碼器跑不動)。
-2. 模型檔全在 HF [`Lightricks/LTX-2.5`](https://huggingface.co/Lightricks/LTX-2.5),照資料夾放:
+1. **ComfyUI must be ≥ 0.34** (older builds have the LTX nodes but the gemma4 text encoder fails at runtime).
+2. All model files live on HF [`Lightricks/LTX-2.5`](https://huggingface.co/Lightricks/LTX-2.5); place per folder:
 
-| 檔 | 放哪 | 大小 |
+| File | Location | Size |
 |---|---|---|
-| `ltx-2.5-22b-distilled-transformer-nvfp4.safetensors` ← **5090/Blackwell 選這顆**(模板預設 int8-convrot 21.5GB,較慢) | `models/diffusion_models/` | 18.7GB |
+| `ltx-2.5-22b-distilled-transformer-nvfp4.safetensors` ← **pick this on 5090/Blackwell** (template default is int8-convrot, 21.5GB, slower) | `models/diffusion_models/` | 18.7GB |
 | `gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors` | `models/text_encoders/` | 15.4GB |
 | `ltx-2.5-video-vae-bf16.safetensors` | `models/vae/` | 1.5GB |
 | `ltx-2.5-audio-vae-bf16.safetensors` | `models/vae/` | 0.4GB |
 | `ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors` | `models/latent_upscale_models/` | 1.0GB |
 
-3. 載入後只要動三處:**UNET 下拉改選 nvfp4**、prompt、(flf2v)首尾兩張圖。其餘保持模板預設(CFG=1、兩段式 9+3 步蒸餾 sigmas)。
-4. 模板另引用 `gemma4_e2b_it_int8_convrot`(prompt 改寫)與 vocoder,缺檔時把對應節點 bypass 掉即可,不影響主鏈。
-5. 下載驗大小:gated repo 要帶 HF token,錯誤頁被存成 .safetensors 是常見靜默炸點。
+3. After loading, change only three things: **UNET dropdown → nvfp4**, the prompt, and (flf2v) the two keyframe images. Keep every other template default (CFG=1, two-stage 9+3 distilled sigmas).
+4. Templates also reference `gemma4_e2b_it_int8_convrot` (prompt rewriting) and a vocoder — if missing, just bypass those nodes; the main chain is unaffected.
+5. Verify file sizes after download: the repo is gated, and an HTML error page silently saved as `.safetensors` is a classic failure mode.
 
-## 批次/雲端自動化(可選)
+## Batch / cloud automation (optional)
 
-`precmd.sh`(RunPod 開機自動升級 ComfyUI+下載模型)、`jobs.example.txt` + repo 根目錄 `ltx25_run.py`(API 直呼跑手)/`run_batch.sh`(逐鏡下載驗證)。
+`precmd.sh` (RunPod boot: auto-upgrade ComfyUI + download models), `jobs.example.txt`, plus `ltx25_run.py` (direct-API runner) and `run_batch.sh` (per-shot download & verification) in the repo root.
 
 ---
 
-## 五個官方沒有的方案(各自獨立打包)
+## Five things the official library doesn't have (each packaged standalone)
 
-| 包 | 內容 | 拿了就能用? |
+| Package | Contents | Ready to use? |
 |---|---|---|
-| [`1-mshot/`](1-mshot/) | 多鏡一次生成:官方 t2v 改 length=241 + 分鏡 prompt 範本 | ✅ 改兩處 |
-| [`2-crossmodel-upscale/`](2-crossmodel-upscale/) | 任意影片 → LTX latent 2× 放大(60s,勝 Real-ESRGAN 8.8×) | ✅ 一支腳本+2 模型 |
-| [`3-m3-mlx/`](3-m3-mlx/) | Apple Silicon 跑 LTX-2 完整配方(--low-ram 生死線等) | ✅ 照 README |
-| [`4-headless-batch/`](4-headless-batch/) | 無人值守雲端批次:開機→升級→下載→跑批→驗證,三道 gate | 需 RunPod |
-| [`5-nvfp4-5090/`](5-nvfp4-5090/) | 官方三工作流的 nvfp4 版(5090 直拖)+ 實測數據 | ✅ 直接拖 |
+| [`1-mshot/`](1-mshot/) | Multi-shot single generation: official t2v with length=241 + storyboard-prompt template | ✅ two edits |
+| [`2-crossmodel-upscale/`](2-crossmodel-upscale/) | Any video → LTX latent 2× upscale (60s; beats Real-ESRGAN 8.8×) | ✅ one script + 2 models |
+| [`3-m3-mlx/`](3-m3-mlx/) | Full recipe for LTX-2 on Apple Silicon (the `--low-ram` lifeline, etc.) | ✅ follow README |
+| [`4-headless-batch/`](4-headless-batch/) | Unattended cloud batch: boot→upgrade→download→run→verify, three gates | needs RunPod |
+| [`5-nvfp4-5090/`](5-nvfp4-5090/) | nvfp4 builds of the three official workflows (drag-in for 5090) + measured numbers | ✅ drag in |

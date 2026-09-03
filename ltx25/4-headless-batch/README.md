@@ -1,18 +1,21 @@
-# 包4|headless 雲端批次(官方只有拖 UI 檔,無自動化)
+# Pkg 4 | Headless cloud batch (officials ship drag-in UI files only — no automation)
 
-無人值守整條鏈:**開機 → 升級 ComfyUI → 下載模型(逐檔大小 gate)→ 版本 gate → 跑批 → 逐支下載+ffprobe 驗證 → 收租**。
+[中文版 →](README.zh.md)
 
-| 檔 | 職責 |
+The full unattended chain: **boot → upgrade ComfyUI → download models (per-file size gate) → version gate → run batch → per-shot download + ffprobe verify → wind down the lease**.
+
+| File | Role |
 |---|---|
-| `precmd.sh` | 容器開機前置:codeload tarball 升級 0.34.3(避 git 機房限流)+ 五模型並行下載,每檔驗大小(防 LFS 指標/錯誤頁存成 .safetensors) |
-| `ltx25_run.py` | API 直呼跑手:組 graph(t2v/flf2v 共用)、提交、輪詢;**提交回應 node_errors 非空即判死**(防 ComfyUI「部分輸出驗證失敗→靜默忽略→回 200」的假成功);ComfyUI 失聯 exit 2 |
-| `run_batch.sh` | 批次引擎:每鏡「跑完→立刻下載→ffprobe 驗證」不等整批;背景續租心跳;exit 2 整批中止;結束把租約改 10 分短引信(防忘了關機) |
-| `jobs.example.txt` | 工作清單:每行 `<輸出名> <參數...>`;prompt 類參數以 `+` 代空白 |
+| `precmd.sh` | Container boot pre-step: upgrade to 0.34.3 via codeload tarball (dodges datacenter git rate-limits) + parallel model downloads, each size-verified (catches LFS pointers / error pages saved as `.safetensors`) |
+| `ltx25_run.py` | Direct-API runner: builds the graph (t2v/flf2v shared), submits, polls; **non-empty `node_errors` in the submit response = hard fail** (guards against ComfyUI's "partial output validation failure → silently ignored → HTTP 200" fake-success); exit 2 when ComfyUI is unreachable |
+| `run_batch.sh` | Batch engine: per shot "run → download immediately → ffprobe verify", never waits for the whole batch; background lease-renewal heartbeat; exit 2 aborts the batch; on exit the lease drops to a 10-min short fuse (protects against forgetting to shut down) |
+| `jobs.example.txt` | Job list: one line per job, `<output_name> <args...>`; use `+` for spaces in prompt-type args |
 
-用法:
+Usage:
 ```bash
-python3 runpod.py create --precmd="$(cat precmd.sh)"     # 見 repo 根目錄 runpod.py
+python3 runpod.py create --precmd="$(cat precmd.sh)"     # see runpod.py at repo root
 RUNNER=ltx25_run.py bash run_batch.sh <podId> <outdir> jobs.example.txt
 ```
-三道 gate 缺一不可——都是真金換的:版本 gate(0.31 節點在但 TE 跑不動)、
-大小 gate(git-lfs 指標檔兩度炸 buffer)、node_errors gate(20 秒假成功)。
+All three gates were paid for in real money: the version gate (0.31 had the nodes but the TE
+couldn't run), the size gate (git-lfs pointer files blew up twice), and the node_errors gate
+(the 20-second fake success).

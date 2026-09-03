@@ -1,12 +1,14 @@
-# 包1|mshot 多鏡一次生成(官方無多鏡模板)
+# Pkg 1 | Multi-shot single generation (no official multi-shot template)
 
-官方 `video_ltx2_5_t2v.json` 接線不動,只改兩處:
-1. **length 改 241**(=10 秒;LTX 幀數規則 8k+1,121/241 皆合法)
-2. prompt 換成「分鏡式」寫法,見 `mshot_prompt_example.txt`:
-   - 第一段:全片共通的畫風+角色+場景(鎖一致性)
-   - 之後每行 `Shot N:` 一鏡,含鏡位(wide/close-up/medium)+動作
-   - 末行音場描述
-模型會自己在單發內切鏡(實測 3 鏡切點乾淨,無轉場殘影)。
+[中文版 →](README.zh.md)
 
-實測(5090/nvfp4):241 幀 ~155s,1920×1088+音訊一次出。
-適用:預覽動態分鏡、快稿;正片仍建議逐鏡生成(可控性高)。
+Keep the official `video_ltx2_5_t2v.json` wiring untouched; change exactly two things:
+1. **length → 241** (= 10 s; LTX frame rule is 8k+1, so 121/241 are both valid)
+2. Swap the prompt for a "storyboard" style — see `mshot_prompt_example.txt`:
+   - First paragraph: style + characters + set shared by the whole clip (locks consistency)
+   - Then one line per shot, `Shot N:` with camera position (wide/close-up/medium) + action
+   - Last line: the soundscape
+The model cuts between shots on its own within a single generation (measured: clean cuts across 3 shots, no transition ghosting).
+
+Measured (5090/nvfp4): 241 frames in ~155s, 1920×1088 + audio in one pass.
+Best for: animatics and fast drafts. For finals, per-shot generation still gives more control.
