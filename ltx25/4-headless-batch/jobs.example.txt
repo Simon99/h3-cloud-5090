@@ -1,0 +1,3 @@
+ltx_t2v --mode=t2v --seed=5001
+ltx_flf_a --mode=flf2v --first=first.png --last=last.png --seed=5002
+ltx_mshot --mode=t2v --prompt-file=/tmp/mshot_prompt.txt --frames=241 --seed=5005

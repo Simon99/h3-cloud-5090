@@ -28,3 +28,15 @@
 ## 批次/雲端自動化(可選)
 
 `precmd.sh`(RunPod 開機自動升級 ComfyUI+下載模型)、`jobs.example.txt` + repo 根目錄 `ltx25_run.py`(API 直呼跑手)/`run_batch.sh`(逐鏡下載驗證)。
+
+---
+
+## 五個官方沒有的方案(各自獨立打包)
+
+| 包 | 內容 | 拿了就能用? |
+|---|---|---|
+| [`1-mshot/`](1-mshot/) | 多鏡一次生成:官方 t2v 改 length=241 + 分鏡 prompt 範本 | ✅ 改兩處 |
+| [`2-crossmodel-upscale/`](2-crossmodel-upscale/) | 任意影片 → LTX latent 2× 放大(60s,勝 Real-ESRGAN 8.8×) | ✅ 一支腳本+2 模型 |
+| [`3-m3-mlx/`](3-m3-mlx/) | Apple Silicon 跑 LTX-2 完整配方(--low-ram 生死線等) | ✅ 照 README |
+| [`4-headless-batch/`](4-headless-batch/) | 無人值守雲端批次:開機→升級→下載→跑批→驗證,三道 gate | 需 RunPod |
+| [`5-nvfp4-5090/`](5-nvfp4-5090/) | 官方三工作流的 nvfp4 版(5090 直拖)+ 實測數據 | ✅ 直接拖 |
