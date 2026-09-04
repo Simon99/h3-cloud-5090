@@ -36,7 +36,9 @@ trap finish EXIT
 
 # 等 ComfyUI 就緒(驗內容不驗狀態碼)
 for i in $(seq 1 80); do
-  curl -s -m 15 "https://${PID}-8188.proxy.runpod.net/object_info" -o /tmp/oi_rb.json 2>/dev/null
+  # 先清殘檔:curl 失敗時沿用上一顆 pod 的舊檔會誤判 COMFY_UP(2026-09-04 空燒 502 事故)
+  rm -f /tmp/oi_rb.json
+  curl -sf -m 15 "https://${PID}-8188.proxy.runpod.net/object_info" -o /tmp/oi_rb.json 2>/dev/null
   python3 -c "
 import json,sys
 try: sys.exit(0 if len(json.load(open('/tmp/oi_rb.json')))>50 else 1)

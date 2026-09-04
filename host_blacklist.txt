@@ -21,3 +21,5 @@ runpod:oi01ctzqp4qu
 runpod:y8317t0srhxb
 # 2026-09-04 VAE解碼階段ComfyUI死(採樣正常),同l0mj2fyxv5vq簽名
 runpod:vokszdgjdacq
+# 2026-09-04 慢網 0.45GB/min(40分18GB)
+runpod:xetiynnhuqmz
