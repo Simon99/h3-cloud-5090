@@ -23,3 +23,5 @@ runpod:y8317t0srhxb
 runpod:vokszdgjdacq
 # 2026-09-04 慢網 0.45GB/min(40分18GB)
 runpod:xetiynnhuqmz
+# 2026-09-04 慢網 0.5GB/min(41分21GB)
+runpod:qc16awv34whg

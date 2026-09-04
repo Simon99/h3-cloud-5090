@@ -42,9 +42,11 @@ for i in $(seq 1 80); do
   python3 -c "
 import json,sys
 try: sys.exit(0 if len(json.load(open('/tmp/oi_rb.json')))>50 else 1)
-except Exception: sys.exit(1)" && { log "COMFY_UP"; break; }
+except Exception: sys.exit(1)" && { log "COMFY_UP"; UP=1; break; }
   sleep 30
 done
+# 等不到就是失敗,不准掉進批次空燒(2026-09-04 兩度 502 空燒事故)
+[ "${UP:-0}" = "1" ] || { log "COMFY_NEVER_UP,整批中止"; exit 3; }
 
 FAIL=0
 while read -r NAME ARGS; do
