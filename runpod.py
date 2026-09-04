@@ -125,7 +125,9 @@ def create(argv):
     if os.path.exists(blf):
         for ln in open(blf):
             ln = ln.strip()
-            if ln.startswith("runpod:"): bl.add(ln.split(":", 1)[1])
+            if ln.startswith("runpod:"):
+                # 容忍行尾註解/空白——2026-09-04 兩筆裸ID+註解被靜默無視,重租又落同一台壞機
+                bl.add(ln.split(":", 1)[1].split()[0].split("#")[0])
     for attempt in range(4):
         d = rest("POST", "/pods", body)
         pid = d.get("id")

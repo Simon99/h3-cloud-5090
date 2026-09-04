@@ -1,14 +1,14 @@
-144944
-143384
+runpod:144944
+runpod:143384
 # 180.189.55.43 = 昨晚889 HF死 + 今晨690/692 ssh死,同出口機房
-145079
-144939
-145061
-145194
-55678
-144973
-145182
-15010
+runpod:145079
+runpod:144939
+runpod:145061
+runpod:145194
+runpod:55678
+runpod:144973
+runpod:145182
+runpod:15010
 # 15010 = 76.121.3.151 假忙GPU+吃B2兩次
 # RunPod machine(2026-08-31):兩顆 pod 連續死在 VAE 解碼(736P 與 544P 各一),
 # 採樣皆正常、log 無 OOM → 宿主層硬殺,疑 RAM 不足。544P 解碼在其他機器從未失敗。
@@ -17,3 +17,7 @@ runpod:l0mj2fyxv5vq
 runpod:k9tp0mygqsb9
 # RunPod machine(2026-09-02):pip 下載先慢後停(1.1GB 卡死 8 分),網路斷流
 runpod:oi01ctzqp4qu
+# 2026-09-03 HF大檔吞吐<0.5GB/min,22GB卡平
+runpod:y8317t0srhxb
+# 2026-09-04 VAE解碼階段ComfyUI死(採樣正常),同l0mj2fyxv5vq簽名
+runpod:vokszdgjdacq
